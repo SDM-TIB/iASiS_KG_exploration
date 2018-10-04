@@ -1,0 +1,34 @@
+[
+    {
+        "sideEffects": [
+            {
+                "omeprazol": "Ritonavir"
+            }
+        ],
+        "parameter": "drugs"
+    },
+    {
+        "sideEffects": [
+            {
+                "Cisplatin": "Reboxetine"
+            }
+        ],
+        "parameter": "chemotherapyDrugs"
+    },
+    {
+        "sideEffects": [
+            {
+                "Erlotinib": "Ofloxacin"
+            }
+        ],
+        "parameter": "tkiDrugs"
+    },
+    {
+        "sideEffects": [
+            {
+                "nivolumab": "Belimumab"
+            }
+        ],
+        "parameter": "immunotherapyDrugs"
+    }
+]

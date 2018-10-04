@@ -1,0 +1,16 @@
+Build the image:
+docker build -t semep_node_service:mai18 .
+
+Run the service:
+docker run -p 5001:5001 semep_node_service:mai18
+
+TAG the image:
+docker tag semep_node_service:mai18 gpalma/semep_node_service:mai18
+
+Push the image:
+docker push gpalma/semep_node_service:mai18
+
+Pull and run the image:
+docker run -p 5001:5001 gpalma/semep_node_service:mai18
+
+
