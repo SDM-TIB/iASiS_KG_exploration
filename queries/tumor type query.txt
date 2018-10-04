@@ -1,0 +1,10 @@
+SELECT DISTINCT   ?label ?type  WHERE {
+                            ?s <http://project-iasis.eu/vocab/hasAnnotation> ?o.
+                            ?o <http://project-iasis.eu/vocab/annLabel> ?label.
+                            ?s a <http://project-iasis.eu/vocab/TumorType>.
+                            ?s <http://project-iasis.eu/vocab/lcType> ?type
+ 
+                       
+
+                                                       
+} 

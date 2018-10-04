@@ -1,0 +1,4 @@
+SELECT DISTINCT  ?p   WHERE {?p a <http://project-iasis.eu/vocab/Publication>.
+                                   MINUS { ?o <http://project-iasis.eu/vocab/annotates> ?p. }
+                                              
+}

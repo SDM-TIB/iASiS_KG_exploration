@@ -1,0 +1,10 @@
+SELECT DISTINCT  ?id ?label ?sameAs WHERE {
+                            ?s <http://project-iasis.eu/vocab/hasAnnotation> ?o.
+                            ?s <http://project-iasis.eu/vocab/drugID> ?id.
+                            ?s <http://project-iasis.eu/vocab/drugLabel> ?label.
+                            ?s owl:sameAs ?sameAs
+                            FILTER(?o in (<http://project-iasis.eu/Annotation/C0524002>,<http://project-iasis.eu/Annotation/C0002333>))
+   
+
+                                                       
+} 

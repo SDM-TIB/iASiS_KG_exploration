@@ -1,0 +1,8 @@
+SELECT DISTINCT  ?s  WHERE {?s a <http://project-iasis.eu/vocab/Publication>.
+                            ?o <http://project-iasis.eu/vocab/annotates>  ?s.
+                            ?o <http://project-iasis.eu/vocab/hasAnnotation> ?a.
+                            ?o <http://project-iasis.eu/vocab/confidence>  ?c.
+                            ?o a <http://project-iasis.eu/vocab/HAS_TOPIC> .
+                            FILTER(?a in (<http://project-iasis.eu/Annotation/C0004272>,<http://project-iasis.eu/Annotation/C0010178>,<http://project-iasis.eu/Annotation/C0013556>,<http://project-iasis.eu/Annotation/C0162416>))        
+}GROUP BY ?s
+ORDER BY DESC (COUNT(?c))

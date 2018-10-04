@@ -1,0 +1,5 @@
+SELECT DISTINCT  ?o   WHERE {?a <http://project-iasis.eu/vocab/hasAnnotation> ?cui .                     
+                            ?a <http://www.w3.org/2002/07/owl#sameAs> ?o
+                            FILTER(?cui in (<http://project-iasis.eu/Annotation/C0242339>,<http://project-iasis.eu/Annotation/C0020538>,<http://project-iasis.eu/Annotation/C0149871>))
+                                              
+}

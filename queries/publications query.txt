@@ -1,0 +1,11 @@
+SELECT DISTINCT  ?id ?title ?author ?year ?journal  WHERE {?s a <http://project-iasis.eu/vocab/Annotation>.
+                            ?o <http://project-iasis.eu/vocab/hasAnnotation>  ?s.
+                            ?o <http://project-iasis.eu/vocab/annotates> ?p.
+                            ?p <http://project-iasis.eu/vocab/pubmedID> ?id.
+                            ?p <http://project-iasis.eu/vocab/title> ?title.
+                            ?p <http://project-iasis.eu/vocab/author> ?author.
+                            ?p <http://project-iasis.eu/vocab/journal> ?journal.
+                            ?p <http://project-iasis.eu/vocab/year> ?year.
+                            FILTER(?s in (<http://project-iasis.eu/Annotation/C0001006>,<http://project-iasis.eu/Annotation/C0001443>))
+                             
+} 

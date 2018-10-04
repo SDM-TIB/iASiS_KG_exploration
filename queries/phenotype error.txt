@@ -1,0 +1,3 @@
+SELECT DISTINCT  *   WHERE {<http://project-iasis.eu/Phenotype/Nocturia> ?p ?o
+                                              
+}
