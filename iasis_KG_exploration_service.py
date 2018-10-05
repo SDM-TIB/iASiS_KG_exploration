@@ -161,56 +161,7 @@ def get_publications_ranked_data(lcuis, limit):
     results = get_publications_ranked_result(qresults, len(lcuis), limit)
     #print(results)
     return results
-"""
-def processing_input(json_input):
-    result = {}
-    
-    if 'comorbidities' in json_input:
-        comorbidities_list = json_input['comorbidities']
-        print("List of comorbidities", comorbidities_list)
-        result['comorbidities'] = comorbidities_list
-        
-    if 'biomarkers' in json_input:
-        biomarkers_list = json_input['biomarkers']
-        print("List of biomarkers", biomarkers_list)
-        result['biomarkers'] = biomarkers_list
 
-    if 'tumorType' in json_input:
-        tumorType_list = json_input['tumorType']
-        print("tumorType", tumorType_list)
-        result['tumorType'] = tumorType_list
-        
-    if 'drugGroups' in json_input:
-        drugsGroups_list = json_input['drugsGroups']
-        print("drugsGroups", drugsGroups_list)
-        result['drugsGroups']  = drugsGroups_list
-        
-    if 'drugs' in json_input:
-        drugs_list = json_input['drugs']
-        print("List of drugs", drugs_list)
-        result['drugs'] =  drugs_list
-        
-    if 'oncologicalTreatments' in json_input:
-        oncologicalTreatments_list = json_input['oncologicalTreatments']
-        print("List of oncologicalTreatments", oncologicalTreatments_list)
-        result['oncologicalTreatments'] = oncologicalTreatments_list
-        
-    if "immunotherapyDrugs" in json_input:
-        immunotherapy_list = json_input['immunotherapyDrugs']
-        print("List of immunotherapyDrugs", immunotherapy_list)
-        result["immunotherapyDrugs"] = immunotherapy_list
-
-    if "tkiDrugs" in json_input:
-        tki_list = json_input['tkiDrugs']
-        print("List of tkiDrugs", tki_list)
-        result['tkiDrugs'] = tki_list
-
-    if "chemotherapyDrugs" in json_input:
-        chemotherapy_list = json_input['chemotherapyDrugs']
-        print("List of chemotherapyDrugs", chemotherapy_list)
-        result["chemotherapyDrugs"] = chemotherapy_list
-    return result
-"""
 """
 def get_comorbidities_publications():
     codicc = {}
@@ -318,7 +269,7 @@ def process_oncologicalTreatments(lelems):
             cuiList.append(e)
     return cuiList
 
-def proccesing_publications_response(input_dicc, limit):
+def proccesing_response(input_dicc, limit, ltypes):
     allpubs = []
     print("Linit: ", limit)
     for elem in input_dicc:
@@ -335,25 +286,30 @@ def proccesing_publications_response(input_dicc, limit):
         results_pub_ranked = get_publications_ranked_data(lcuis, limit)
         codicc = {}
         codicc['parameter'] = elem
-        codicc['publications'] = []
-      #  codicc['sideEffects'] = []
-      #  codicc['drugInteractions'] = []
-        pubs = []
-        for (id_pub, score) in results_pub_ranked:
-            pub1 = {}
-            if  id_pub in results_pub:
-                pub1['title'] =  results_pub[id_pub]["title"] 
-                pub1['url'] = "https://www.ncbi.nlm.nih.gov/pubmed/"+id_pub
-                pub1['author'] = results_pub[id_pub]['author']
-                pub1['journal'] = results_pub[id_pub]['journal']
-                pub1['year'] = results_pub[id_pub]["year"]
-                pub1['score'] = str(score)
-                print(pub1)
-                pubs.append(pub1)
-            else:
-                print("+++++ Missing ID ", id_pub)
-        codicc['publications'] = pubs
-        allpubs.append(codicc)
+
+        if ('sideEffects' in ltypes):
+            codicc['sideEffects'] = []
+        
+        if ('drugInteractions' in ltypes):
+            codicc['drugInteractions'] = []
+
+        if ('publications' in ltypes):
+            pubs = []
+            for (id_pub, score) in results_pub_ranked:
+                pub1 = {}
+                if  id_pub in results_pub:
+                    pub1['title'] =  results_pub[id_pub]["title"] 
+                    pub1['url'] = "https://www.ncbi.nlm.nih.gov/pubmed/"+id_pub
+                    pub1['author'] = results_pub[id_pub]['author']
+                    pub1['journal'] = results_pub[id_pub]['journal']
+                    pub1['year'] = results_pub[id_pub]["year"]
+                    pub1['score'] = str(score)
+                    print(pub1)
+                    pubs.append(pub1)
+                else:
+                    print("+++++ Missing ID ", id_pub)
+            codicc['publications'] = pubs
+            allpubs.append(codicc)
     return allpubs
 
 def proccesing_side_effects_response(input_list):
@@ -387,7 +343,14 @@ def proccesing_side_effects_response(input_list):
     se.append(drugs)
     
     return se
-    
+
+def proccesing_list_types(ltype):
+    ltype = ltype.replace("[", "")
+    ltype = ltype.replace("]", "")
+    ltype = ltype.replace(" ", "")
+    ltype = ltype.split(",")
+    return ltype 
+
 @app.route('/iasiskgexploration', methods=['POST'])
 def run_semep_drug_service():
     if (not request.json):
@@ -400,7 +363,9 @@ def run_semep_drug_service():
 
     typed = request.args['type']
     limit = int(request.args['limit'])
-
+    ltypes = proccesing_list_types(typed)
+    print("List of types ", ltypes)
+    
     print("Proccesing input")
     #input_list = processing_input(request.json)
     input_list = request.json
@@ -413,19 +378,24 @@ def run_semep_drug_service():
         logger.info("Error in the input format")
         r = EMPTY_JSON
     else:
-        if typed == 'publications':
-            print("running publications")
-            #lcuis = ["C0001006", "C0001443"]
-            #lcuis = ["C0004272", "C0010178", "C0013556", "C0162416"]
-            #results_pub = get_publication_data(lcuis)
-            #results_pub_ranked = get_publications_ranked_data(lcuis, limit)
-            pubs = proccesing_publications_response(input_list, limit)
-        elif typed == 'sideEffects':
-            pubs = proccesing_side_effects_response(input_list)
-            print(pubs)
-        else:
-            EMPTY_JSON
-        r = json.dumps(pubs, indent=4)
+        if len(ltypes) == 0:
+            abort(400)
+        if ('publications' not in ltypes) and ('sideEffects' not in ltypes) and ('drugInteractions' not in ltypes):
+            abort(400)
+        response = proccesing_response(input_list, limit, ltypes)
+        #if typed == 'publications':
+        #  print("running publications")
+        #lcuis = ["C0001006", "C0001443"]
+        #lcuis = ["C0004272", "C0010178", "C0013556", "C0162416"]
+        #results_pub = get_publication_data(lcuis)
+        #results_pub_ranked = get_publications_ranked_data(lcuis, limit)
+            
+        # elif typed == 'sideEffects':
+        #     pubs = proccesing_side_effects_response(input_list)
+        #     print(pubs)
+        # else:
+        #    EMPTY_JSON
+        r = json.dumps(response, indent=4)
             
     logger.info("Sending the results: ")
     response = make_response(r, 200)
