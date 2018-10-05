@@ -19,32 +19,81 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
-KG="http://194.95.157.198:11230/sparql"
+#KG="http://194.95.157.198:11230/sparql"
 #KG = os.environ["IASISKG_ENDPOINT"]
-
-DBPEDIA_ENDPOINT="http://dbpedia.org/sparql"
-BIO2RDF_ENDPOINT="http://bio2rdf.org/sparql"
+KG="http://node2.research.tib.eu:7171/sparql"
 EMPTY_JSON = "{}"
+
+
+#DBPEDIA_ENDPOINT="http://dbpedia.org/sparql"
+#BIO2RDF_ENDPOINT="http://bio2rdf.org/sparql"
+
 
 app = Flask(__name__)
 
+############################
+#
+# Query constants
+#
+############################
 
-#def get_iasis_kg_query(drug):
-#    return """SELECT DISTINCT ?o10 WHERE {
-#       ?s <http://project-iasis.eu/vocab/mutation_isLocatedIn_transcript> ?o7 .
-#       ?s <http://project-iasis.eu/vocab/mutation_somatic_status> 'Confirmed somatic variant' .
-#       ?s <http://project-iasis.eu/vocab/mutation_isLocatedIn_gene> <http://project-iasis.eu/Gene/EGFR>.
-#       ?s <http://project-iasis.eu/vocab/mutationDescription> 'Substitution - Missense' .
-#       ?s <http://project-iasis.eu/vocab/mutation_isLocatedIn_tumor> ?o11 .
-#       ?o11 <http://project-iasis.eu/vocab/tumor_origin> 'metastasis' .
-#       ?o7 <http://project-iasis.eu/vocab/translates_as> ?o1 .
-#       ?s  <http://project-iasis.eu/vocab/mutation_aa> ?o10 .
-#       ?o4  <http://project-iasis.eu/vocab/drug_interactsWith_protein> ?o1 . 
-#       ?o4 <http://project-iasis.eu/vocab/label> '"""+drug+"""'
-#}"""
-
+QUERY_PUBLICATIONS ="""
+    SELECT DISTINCT  ?id ?title ?author ?year ?journal  WHERE {?s a <http://project-iasis.eu/vocab/Annotation>.
+                            ?o <http://project-iasis.eu/vocab/hasAnnotation>  ?s.
+                            ?o <http://project-iasis.eu/vocab/annotates> ?p.
+                            ?p <http://project-iasis.eu/vocab/pubmedID> ?id.
+                            ?p <http://project-iasis.eu/vocab/title> ?title.
+                            ?p <http://project-iasis.eu/vocab/author> ?author.
+                            ?p <http://project-iasis.eu/vocab/journal> ?journal.
+                            ?p <http://project-iasis.eu/vocab/year> ?year.
 """
-# Example of proccesing queries
+
+OPENP = "("
+CLOSEP = ")"
+FILTER = 'FILTER'
+CLOSE = "}"
+NEWLINE = "\n"
+DOT = '.'
+SPC = " "
+COMA = ","
+IN = "in"
+VAR = "?"
+ANNT = "<http://project-iasis.eu/Annotation/"
+GT = ">"
+CLOSE_RANK= "} GROUP BY ?idf ORDER BY DESC (?C)"
+
+QUERY_PUBLICATIONS_RANKED ="""
+SELECT DISTINCT  ?idf COUNT(?c) as ?C WHERE {
+                            ?s a <http://project-iasis.eu/vocab/Publication>.
+                            ?o <http://project-iasis.eu/vocab/annotates>  ?s.
+                            ?o <http://project-iasis.eu/vocab/hasAnnotation> ?a.
+                            ?o <http://project-iasis.eu/vocab/confidence>  ?c.
+                            ?o a <http://project-iasis.eu/vocab/HAS_TOPIC> .
+                            ?s <http://project-iasis.eu/vocab/pubmedID> ?idf.
+"""
+
+def query_publications_ranked(lcuis):
+    query = QUERY_PUBLICATIONS_RANKED + get_publications_filter(lcuis, "a") + NEWLINE + CLOSE_RANK
+    print("Query publications ranked:")
+    print(query)
+    return query
+
+def get_publications_filter(lcuis, variable):
+    fstr = FILTER + OPENP + VAR + variable + SPC + IN + SPC + OPENP
+    if len(lcuis) ==  1:
+        fstr += ANNT + lcuis[0] + GT + CLOSEP + CLOSEP
+        return fstr
+    for cui in lcuis[:-1]:
+        fstr += ANNT + cui + GT + COMA + SPC 
+    fstr += ANNT + lcuis[-1] + GT + CLOSEP + CLOSEP 
+    print(fstr)
+    return fstr
+
+def get_query_publication(lcuis):
+    query = QUERY_PUBLICATIONS + get_publications_filter(lcuis, "s") + NEWLINE + CLOSE
+    print("Query:")
+    print(query)
+    return query
 
 def sendSPARQL(sparql_ins, origin_query, num_paging, len_max):
     cur_offset = 0
@@ -61,59 +110,58 @@ def sendSPARQL(sparql_ins, origin_query, num_paging, len_max):
         cur_offset = cur_offset + num_paging
     return list_result
 
-def get_iasis_results(qresults, results):
-    for cur_result in qresults:
-        mutation = cur_result["o10"]["value"]
-        #print(mutation)
-        dic_add(EFGR, mutation, results)
-        
-def execute_query(query, end_point):
+def execute_query(query):
     logger.info("Query:" + str(query))
-    logger.info("EndPoint:" + str(end_point))
-    sparql_ins = SPARQLWrapper(end_point)
+    logger.info("EndPoint:" + str(KG))
+    sparql_ins = SPARQLWrapper(KG)
     logger.info("Waiting for the SPARQL Endpoint")
-    qresults = sendSPARQL(sparql_ins=sparql_ins, origin_query=query, num_paging=50000000, len_max=sys.maxsize)
+    qresults = sendSPARQL(sparql_ins=sparql_ins, origin_query=query, num_paging=10000, len_max=10000)
     #print(qresults)
     return qresults
-    
-def get_drug_data(drug, endpoint):
-    results = {}
-    # Quering DBpedia
-    query = get_dbpedia_query(drug.title())
-    qresults = execute_query(query, DBPEDIA_ENDPOINT)
-    logger.info("Resutls DBpesia 1"  + str(len(qresults)))
-    if len(qresults) != 1:
-        logger.info("First query to  DBpedia failed")
-        query = get_dbpedia2_query(drug.title())
-        qresults = execute_query(query, DBPEDIA_ENDPOINT)
-    get_dbpedia_results(qresults, results)
-    logger.info("Number of triples DBpedia: " + str(len(qresults)))
+
+def get_publications_results(qresults):
+    result = {}
+    for cur_result in qresults:
+        pub_dicc = {}
+        pub_id = cur_result["id"]["value"]
+        pub_dicc["title"] = cur_result["title"]["value"]
+        pub_dicc["author"] = cur_result["author"]["value"]
+        pub_dicc["year"] = cur_result["year"]["value"]
+        pub_dicc["journal"] = cur_result["journal"]["value"]
+        result[pub_id] = pub_dicc
+        #print((pub_title, pub_author, pub_year, pub_journal))
+    return result 
+
+def get_publication_data(lcuis):
+    print("CUIS ",lcuis)
+    query = get_query_publication(lcuis)
+    qresults = execute_query(query)
+    logger.info("Number of publications: " + str(len(qresults)))
+    results = get_publications_results(qresults)
     #print(results)
+    return results
 
-    # Quering Bio2RDF
-    if "drugbankID" in results:
-        drugbankId = results["drugbankID"]
-        if drugbankId != None and drugbankId != "" and drugbankId[:2] == "DB":
-            query = get_bio2rdf_query(drugbankId)
-            qresults = execute_query(query, BIO2RDF_ENDPOINT)
-            logger.info("Number of triples Bio2RDF: " + str(len(qresults)))
-            get_bio2df_results(qresults, results)
+def get_publications_ranked_result(qresults, n, limit):
+    results = []
+    cont = 0
+    for cur_result in qresults:
+        if (cont >= limit):
+            return results
+        pub_id = cur_result["idf"]["value"]
+        pub_score = cur_result["C"]["value"]
+        results.append((pub_id,  int(pub_score)/n)) 
+        cont += 1
+    return results
 
-    # Quering iASiS KG
-    query = get_iasis_kg_query(drug.lower())
-    #qresults = execute_query(query, IASIS_ENDPOINT)
-    qresults = execute_query(query, endpoint)
-    logger.info("Number of triples iASiS: " + str(len(qresults)))
-    get_iasis_results(qresults, results)
-
-    # Checking the results
-    check_results(results)
-    print(len(results))
-    assert(len(results) == 10)
-    print(results)
+def get_publications_ranked_data(lcuis, limit):
+    print("CUIS ", lcuis)
+    query = query_publications_ranked(lcuis)
+    qresults = execute_query(query)
+    logger.info("Number of publications ranked: " + str(len(qresults)))
+    results = get_publications_ranked_result(qresults, len(lcuis), limit)
+    #print(results)
     return results
 """
-
 def processing_input(json_input):
     result = {}
     
@@ -132,7 +180,7 @@ def processing_input(json_input):
         print("tumorType", tumorType_list)
         result['tumorType'] = tumorType_list
         
-    if 'drugsGroups' in json_input:
+    if 'drugGroups' in json_input:
         drugsGroups_list = json_input['drugsGroups']
         print("drugsGroups", drugsGroups_list)
         result['drugsGroups']  = drugsGroups_list
@@ -162,7 +210,8 @@ def processing_input(json_input):
         print("List of chemotherapyDrugs", chemotherapy_list)
         result["chemotherapyDrugs"] = chemotherapy_list
     return result
-
+"""
+"""
 def get_comorbidities_publications():
     codicc = {}
     codicc['parameter'] = 'comorbidities'
@@ -235,6 +284,77 @@ def proccesing_publications_response(input_dicc):
         pubs.append(copub)
     
     return pubs
+"""
+
+def proceess_biomarkers(lelems):
+    cuiList = []
+    for e in lelems:
+        if e.upper() == "EGFR":
+            cuiList.append("C0034802")
+        elif e.upper() == "ALK":
+            cuiList.append("C1332080")
+        elif e.upper() == "ROS1":
+            cuiList.append("C0812281")
+        else:
+            cuiList.append(e)
+    return cuiList
+
+def process_oncologicalTreatments(lelems):
+    cuiList = []
+    for e in lelems:
+        if e.lower() == "immunotherapy":
+            cuiList.append("C0021083")
+        elif e.lower() == "chemotherapy":
+            cuiList.append("C3665472")
+        elif e.lower() == "tki":
+            cuiList.append("C3899317")
+        elif e.lower() == "antiangiogenic":
+            cuiList.append("C0596087")
+        elif e.lower() == "radiationtherapy":
+            cuiList.append("C0034619")
+        elif e.lower() == "surgery":
+            cuiList.append("C0543467")
+        else:
+            cuiList.append(e)
+    return cuiList
+
+def proccesing_publications_response(input_dicc, limit):
+    allpubs = []
+    print("Linit: ", limit)
+    for elem in input_dicc:
+        print("")
+        if elem == 'biomarkers':
+            lcuis =  proceess_biomarkers(input_dicc[elem])
+        elif elem == 'oncologicalTreatments':
+            lcuis = process_oncologicalTreatments(input_dicc[elem])
+        else:
+            lcuis = input_dicc[elem]
+        print("Processing: ", elem)
+        print("CUIS ", lcuis)
+        results_pub = get_publication_data(lcuis)
+        results_pub_ranked = get_publications_ranked_data(lcuis, limit)
+        codicc = {}
+        codicc['parameter'] = elem
+        codicc['publications'] = []
+      #  codicc['sideEffects'] = []
+      #  codicc['drugInteractions'] = []
+        pubs = []
+        for (id_pub, score) in results_pub_ranked:
+            pub1 = {}
+            if  id_pub in results_pub:
+                pub1['title'] =  results_pub[id_pub]["title"] 
+                pub1['url'] = "https://www.ncbi.nlm.nih.gov/pubmed/"+id_pub
+                pub1['author'] = results_pub[id_pub]['author']
+                pub1['journal'] = results_pub[id_pub]['journal']
+                pub1['year'] = results_pub[id_pub]["year"]
+                pub1['score'] = str(score)
+                print(pub1)
+                pubs.append(pub1)
+            else:
+                print("+++++ Missing ID ", id_pub)
+        codicc['publications'] = pubs
+        allpubs.append(codicc)
+    return allpubs
 
 def proccesing_side_effects_response(input_list):
     se = []
@@ -279,10 +399,11 @@ def run_semep_drug_service():
     print("Limit of responses", request.args['limit'])
 
     typed = request.args['type']
-    limit = request.args['limit']
+    limit = int(request.args['limit'])
 
     print("Proccesing input")
-    input_list = processing_input(request.json)
+    #input_list = processing_input(request.json)
+    input_list = request.json
     print(input_list)
     print("Proccesing input done ")
     logger.info("Number of terms analyze: "+ str(len(input_list)))
@@ -293,7 +414,12 @@ def run_semep_drug_service():
         r = EMPTY_JSON
     else:
         if typed == 'publications':
-            pubs = proccesing_publications_response(input_list)
+            print("running publications")
+            #lcuis = ["C0001006", "C0001443"]
+            #lcuis = ["C0004272", "C0010178", "C0013556", "C0162416"]
+            #results_pub = get_publication_data(lcuis)
+            #results_pub_ranked = get_publications_ranked_data(lcuis, limit)
+            pubs = proccesing_publications_response(input_list, limit)
         elif typed == 'sideEffects':
             pubs = proccesing_side_effects_response(input_list)
             print(pubs)

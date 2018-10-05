@@ -1,0 +1,208 @@
+[
+    {
+        "parameter": "comorbidities",
+        "publications": [
+            {
+                "author": "Kapp Marshall B, Lo Bernard",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/11649883",
+                "score": "0.75",
+                "journal": "The Milbank quarterly",
+                "title": "Legal perceptions and medical decision making.",
+                "year": "1986"
+            },
+            {
+                "author": "Matsuda Osamu",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/17234040",
+                "score": "0.75",
+                "journal": "International psychogeriatrics",
+                "title": "An assessment of the attitudes of potential caregivers toward the abuse of elderly persons with and without dementia.",
+                "year": "2007"
+            },
+            {
+                "author": "Van Wielingen L E, Tuokko H A, Cramer K, Mateer C A, Hultsch D F",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15370053",
+                "score": "0.5",
+                "journal": "Aging & mental health",
+                "title": "Awareness of financial skills in dementia.",
+                "year": "2004"
+            },
+            {
+                "author": "Suh Guk-Hee, Wimo Anders, Gauthier Serge, O'Connor Daniel, Ikeda Manabu, Homma Akira, Dominguez Jacqueline, Yang Bong-Min",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/19735595",
+                "score": "0.5",
+                "journal": "International psychogeriatrics",
+                "title": "International price comparisons of Alzheimer's drugs: a way to close the affordability gap.",
+                "year": "2009"
+            }
+        ]
+    },
+    {
+        "parameter": "oncologicalTreatments",
+        "publications": [
+            {
+                "author": "Blasko Imrich, Grubeck-Loebenstein Beatrix",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12534311",
+                "score": "0.16666666666666666",
+                "journal": "Drugs & aging",
+                "title": "Role of the immune system in the pathogenesis, prevention and treatment of Alzheimer's disease.",
+                "year": "2003"
+            },
+            {
+                "author": "Weiner Howard L",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15681760",
+                "score": "0.16666666666666666",
+                "journal": "Annals of the New York Academy of Sciences",
+                "title": "Current issues in the treatment of human diseases by mucosal tolerance.",
+                "year": "2004"
+            },
+            {
+                "author": "Joray S, Ghika J, von Gunten A, B\u00fcla C, Gold G, Assal F",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15977708",
+                "score": "0.16666666666666666",
+                "journal": "Revue medicale suisse",
+                "title": "[Is there a treatment for Alzheimer's disease?].",
+                "year": "2005"
+            },
+            {
+                "author": "Mor Felix, Monsonego Alon",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16734513",
+                "score": "0.16666666666666666",
+                "journal": "Expert review of neurotherapeutics",
+                "title": "Immunization therapy in Alzheimer's disease.",
+                "year": "2006"
+            }
+        ]
+    },
+    {
+        "parameter": "tkiDrugs",
+        "publications": [
+            {
+                "author": "Wrasidlo Wolf, Crews Leslie A, Tsigelny Igor F, Stocking Emily, Kouznetsova Valentina L, Price Diana, Paulino Amy, Gonzales Tania, Overk Cassia R, Patrick Christina, Rockenstein Edward, Masliah Eliezer",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25117211",
+                "score": "0.16666666666666666",
+                "journal": "British journal of pharmacology",
+                "title": "Neuroprotective effects of the anti-cancer drug sunitinib in models of HIV neurotoxicity suggests potential for the treatment of neurodegenerative disorders.",
+                "year": "2014"
+            }
+        ]
+    },
+    {
+        "parameter": "biomarkers",
+        "publications": [
+            {
+                "author": "Li\u00e9vens Jean-Charles, Birman Serge",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/17937893",
+                "score": "0.3333333333333333",
+                "journal": "Medecine sciences : M/S",
+                "title": "[Astrocytes in Huntington's chorea: accomplice or guilty of the neuronal death?].",
+                "year": "2007"
+            },
+            {
+                "author": "Bruban Julien, Voloudakis Georgios, Huang Qian, Kajiwara Yuji, Al Rahim Md, Yoon Yonejung, Shioi Junichi, Gama Sosa Miguel A, Shao Zhiping, Georgakopoulos Anastasios, Robakis Nikolaos K",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25985800",
+                "score": "0.3333333333333333",
+                "journal": "FASEB journal : official publication of the Federation of American Societies for Experimental Biology",
+                "title": "Presenilin 1 is necessary for neuronal, but not glial, EGFR expression and neuroprotection via \u03b3-secretase-independent transcriptional mechanisms.",
+                "year": "2015"
+            },
+            {
+                "author": "Hashimoto Yuichi, Niikura Takako, Chiba Tomohiro, Tsukamoto Emi, Kadowaki Hisae, Nishitoh Hideki, Yamagishi Yohichi, Ishizaka Miho, Yamada Marina, Nawa Mikiro, Terashita Kenzo, Aiso Sadakazu, Ichijo Hidenori, Nishimoto Ikuo",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12829723",
+                "score": "0.3333333333333333",
+                "journal": "The Journal of pharmacology and experimental therapeutics",
+                "title": "The cytoplasmic domain of Alzheimer's amyloid-beta protein precursor causes sustained apoptosis signal-regulating kinase 1/c-Jun NH2-terminal kinase-mediated neurotoxic signal via dimerization.",
+                "year": "2003"
+            },
+            {
+                "author": "Edgar James R, Will\u00e9n Katarina, Gouras Gunnar K, Futter Clare E",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/26002056",
+                "score": "0.3333333333333333",
+                "journal": "Journal of cell science",
+                "title": "ESCRTs regulate amyloid precursor protein sorting in multivesicular bodies and intracellular amyloid-\u03b2 accumulation.",
+                "year": "2015"
+            }
+        ]
+    },
+    {
+        "parameter": "tumorType",
+        "publications": []
+    },
+    {
+        "parameter": "chemotherapyDrugs",
+        "publications": [
+            {
+                "author": "D'Ambrosio David J, Cohen Roger B, Glass Jon, Konski Andre, Buyyounouski Mark K, Feigenberg Steven J",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/17447010",
+                "score": "0.2222222222222222",
+                "journal": "Journal of neuro-oncology",
+                "title": "Unexpected dementia following prophylactic cranial irradiation for small cell lung cancer: case report.",
+                "year": "2007"
+            },
+            {
+                "author": "Conejero-Goldberg Concepcion, Townsend Kirk, Davies Peter",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/18278567",
+                "score": "0.2222222222222222",
+                "journal": "Journal of molecular neuroscience : MN",
+                "title": "Effects of cell cycle inhibitors on tau phosphorylation in N2aTau3R cells.",
+                "year": "2008"
+            },
+            {
+                "author": "Ebneth A, Godemann R, Stamer K, Illenberger S, Trinczek B, Mandelkow E",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/9813097",
+                "score": "0.2222222222222222",
+                "journal": "The Journal of cell biology",
+                "title": "Overexpression of tau protein inhibits kinesin-dependent trafficking of vesicles, mitochondria, and endoplasmic reticulum: implications for Alzheimer's disease.",
+                "year": "1998"
+            },
+            {
+                "author": "Kellie Stewart J, Chaku Jyoti, Lockwood Liane R, O'Regan Peter, Waters Keith D, Wong Christopher K F",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16026694",
+                "score": "0.2222222222222222",
+                "journal": "European journal of cancer (Oxford, England : 1990)",
+                "title": "Late magnetic resonance imaging features of leukoencephalopathy in children with central nervous system tumours following high-dose methotrexate and neuraxis radiation therapy.",
+                "year": "2005"
+            }
+        ]
+    },
+    {
+        "parameter": "drugs",
+        "publications": [
+            {
+                "author": "Herrmann N, Lanct\u00f4t K, Myszak M",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/10653214",
+                "score": "0.5",
+                "journal": "Journal of clinical psychopharmacology",
+                "title": "Effectiveness of gabapentin for the treatment of behavioral disorders in dementia.",
+                "year": "2000"
+            },
+            {
+                "author": "Koudinov Alexei R, Koudinova Natalia V",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/14574623",
+                "score": "0.5",
+                "journal": "Pharmacopsychiatry",
+                "title": "Cholesterol, synaptic function and Alzheimer's disease.",
+                "year": "2003"
+            },
+            {
+                "author": "Shibuya Yohei, Niu Zhaoyang, Bryleva Elena Y, Harris Brent T, Murphy Stephanie R, Kheirollah Alireza, Bowen Zachary D, Chang Catherine C Y, Chang Ta-Yuan",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25930235",
+                "score": "0.5",
+                "journal": "Neurobiology of aging",
+                "title": "Acyl-coenzyme A:cholesterol acyltransferase 1 blockage enhances autophagy in the neurons of triple transgenic Alzheimer's disease mouse and reduces human P301L-tau content at the presymptomatic stage.",
+                "year": "2015"
+            },
+            {
+                "author": "Herholz K, Bauer B, Wienhard K, Kracht L, Mielke R, Lenz M O, Strotmann T, Heiss W D",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/11458998",
+                "score": "0.5",
+                "journal": "Journal of neural transmission (Vienna, Austria : 1996)",
+                "title": "In-vivo measurements of regional acetylcholine esterase activity in degenerative dementia: comparison with blood flow and glucose metabolism.",
+                "year": "2000"
+            }
+        ]
+    },
+    {
+        "parameter": "immunotherapyDrugs",
+        "publications": []
+    }
+]

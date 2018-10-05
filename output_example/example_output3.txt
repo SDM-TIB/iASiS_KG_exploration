@@ -3,24 +3,34 @@
         "parameter": "comorbidities",
         "links": [
             {
-                "title": "Cholesterol dysfunction in neurodegenerative diseases: is Huntington's disease in the list?",
-                "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/17067733"
+                "title": "Legal perceptions and medical decision making.",
+                "score": "0.75",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/11649883"
             },
             {
-                "title": "A clinical registry of dementia based on the principle of epidemiological surveillance.",
-                "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/19175921"
+                "title": "An assessment of the attitudes of potential caregivers toward the abuse of elderly persons with and without dementia.",
+                "score": "0.75",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/17234040"
             },
             {
-                "title": "Aluminium in parenteral nutrition: a systematic review.",
+                "title": "Awareness of financial skills in dementia.",
                 "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/23403874"
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15370053"
             },
             {
-                "title": "Association of sleep-disordered breathing with decreased cognitive function among patients with dementia.",
+                "title": "International price comparisons of Alzheimer's drugs: a way to close the affordability gap.",
                 "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/24975686"
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/19735595"
+            },
+            {
+                "title": "Economic impact of dementia in developing countries: an evaluation of costs of Alzheimer-type dementia in Argentina.",
+                "score": "0.5",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16870037"
+            },
+            {
+                "title": "Predictors of performance on the MMSE and the DRS-2 among American Indian elders.",
+                "score": "0.5",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/21037127"
             }
         ]
     },
@@ -71,6 +81,16 @@
                 "title": "In-vivo measurements of regional acetylcholine esterase activity in degenerative dementia: comparison with blood flow and glucose metabolism.",
                 "score": "0.5",
                 "url": "https://www.ncbi.nlm.nih.gov/pubmed/11458998"
+            },
+            {
+                "title": "A simple method for the detection of abnormal brain regions in Alzheimer's disease patients using [11C]MP4A: comparison with [123I]IMP SPECT.",
+                "score": "0.5",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15233279"
+            },
+            {
+                "title": "Cholinergic activity correlates with reserve proxies in Alzheimer's disease.",
+                "score": "0.5",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/23820589"
             }
         ]
     },

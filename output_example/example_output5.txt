@@ -1,0 +1,185 @@
+[
+    {
+        "parameter": "comorbidities",
+        "links": [
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/11649883",
+                "title": "Legal perceptions and medical decision making.",
+                "score": "0.75"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/17234040",
+                "title": "An assessment of the attitudes of potential caregivers toward the abuse of elderly persons with and without dementia.",
+                "score": "0.75"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15370053",
+                "title": "Awareness of financial skills in dementia.",
+                "score": "0.5"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/19735595",
+                "title": "International price comparisons of Alzheimer's drugs: a way to close the affordability gap.",
+                "score": "0.5"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16870037",
+                "title": "Economic impact of dementia in developing countries: an evaluation of costs of Alzheimer-type dementia in Argentina.",
+                "score": "0.5"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/21037127",
+                "title": "Predictors of performance on the MMSE and the DRS-2 among American Indian elders.",
+                "score": "0.5"
+            }
+        ]
+    },
+    {
+        "parameter": "drugs",
+        "links": [
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/10653214",
+                "title": "Effectiveness of gabapentin for the treatment of behavioral disorders in dementia.",
+                "score": "0.5"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/14574623",
+                "title": "Cholesterol, synaptic function and Alzheimer's disease.",
+                "score": "0.5"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25930235",
+                "title": "Acyl-coenzyme A:cholesterol acyltransferase 1 blockage enhances autophagy in the neurons of triple transgenic Alzheimer's disease mouse and reduces human P301L-tau content at the presymptomatic stage.",
+                "score": "0.5"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/11458998",
+                "title": "In-vivo measurements of regional acetylcholine esterase activity in degenerative dementia: comparison with blood flow and glucose metabolism.",
+                "score": "0.5"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15233279",
+                "title": "A simple method for the detection of abnormal brain regions in Alzheimer's disease patients using [11C]MP4A: comparison with [123I]IMP SPECT.",
+                "score": "0.5"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/23820589",
+                "title": "Cholinergic activity correlates with reserve proxies in Alzheimer's disease.",
+                "score": "0.5"
+            }
+        ]
+    },
+    {
+        "parameter": "tkiDrugs",
+        "links": [
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25117211",
+                "title": "Neuroprotective effects of the anti-cancer drug sunitinib in models of HIV neurotoxicity suggests potential for the treatment of neurodegenerative disorders.",
+                "score": "1.0"
+            }
+        ]
+    },
+    {
+        "parameter": "immunotherapyDrugs",
+        "links": []
+    },
+    {
+        "parameter": "chemotherapyDrugs",
+        "links": [
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16165254",
+                "title": "Identification of a mutant-like conformation of p53 in fibroblasts from sporadic Alzheimer's disease patients.",
+                "score": "1.0"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/18278567",
+                "title": "Effects of cell cycle inhibitors on tau phosphorylation in N2aTau3R cells.",
+                "score": "1.0"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12917330",
+                "title": "Nuclease-deficient FEN-1 blocks Rad51/BRCA1-mediated repair and causes trinucleotide repeat instability.",
+                "score": "1.0"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/22980637",
+                "title": "Target-based selection of flavonoids for neurodegenerative disorders.",
+                "score": "1.0"
+            }
+        ]
+    },
+    {
+        "parameter": "oncologicalTreatments",
+        "links": [
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12534311",
+                "title": "Role of the immune system in the pathogenesis, prevention and treatment of Alzheimer's disease.",
+                "score": "0.3333333333333333"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15681760",
+                "title": "Current issues in the treatment of human diseases by mucosal tolerance.",
+                "score": "0.3333333333333333"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15977708",
+                "title": "[Is there a treatment for Alzheimer's disease?].",
+                "score": "0.3333333333333333"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16734513",
+                "title": "Immunization therapy in Alzheimer's disease.",
+                "score": "0.3333333333333333"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16766200",
+                "title": "Anti-Abeta single-chain antibody delivery via adeno-associated virus for treatment of Alzheimer's disease.",
+                "score": "0.3333333333333333"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16842179",
+                "title": "Immunotherapy for conformational diseases.",
+                "score": "0.3333333333333333"
+            }
+        ]
+    },
+    {
+        "parameter": "biomarkers",
+        "links": [
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/17937893",
+                "title": "[Astrocytes in Huntington's chorea: accomplice or guilty of the neuronal death?].",
+                "score": "0.3333333333333333"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25985800",
+                "title": "Presenilin 1 is necessary for neuronal, but not glial, EGFR expression and neuroprotection via \u03b3-secretase-independent transcriptional mechanisms.",
+                "score": "0.3333333333333333"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12829723",
+                "title": "The cytoplasmic domain of Alzheimer's amyloid-beta protein precursor causes sustained apoptosis signal-regulating kinase 1/c-Jun NH2-terminal kinase-mediated neurotoxic signal via dimerization.",
+                "score": "0.3333333333333333"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/26002056",
+                "title": "ESCRTs regulate amyloid precursor protein sorting in multivesicular bodies and intracellular amyloid-\u03b2 accumulation.",
+                "score": "0.3333333333333333"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/23238278",
+                "title": "Suppressive effects of SuHeXiang Wan on amyloid-\u03b242-induced extracellular signal-regulated kinase hyperactivation and glial cell proliferation in a transgenic Drosophila model of Alzheimer's disease.",
+                "score": "0.3333333333333333"
+            },
+            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/24116161",
+                "title": "Grb2 is regulated by foxd3 and has roles in preventing accumulation and aggregation of mutant huntingtin.",
+                "score": "0.3333333333333333"
+            }
+        ]
+    },
+    {
+        "parameter": "tumorType",
+        "links": []
+    }
+]

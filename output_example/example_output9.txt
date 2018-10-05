@@ -1,0 +1,245 @@
+[
+    {
+        "publications": [
+            {
+                "score": "0.3333333333333333",
+                "title": "[Astrocytes in Huntington's chorea: accomplice or guilty of the neuronal death?].",
+                "journal": "Medecine sciences : M/S",
+                "author": "Li\u00e9vens Jean-Charles, Birman Serge",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/17937893",
+                "year": "2007"
+            },
+            {
+                "score": "0.3333333333333333",
+                "title": "Presenilin 1 is necessary for neuronal, but not glial, EGFR expression and neuroprotection via \u03b3-secretase-independent transcriptional mechanisms.",
+                "journal": "FASEB journal : official publication of the Federation of American Societies for Experimental Biology",
+                "author": "Bruban Julien, Voloudakis Georgios, Huang Qian, Kajiwara Yuji, Al Rahim Md, Yoon Yonejung, Shioi Junichi, Gama Sosa Miguel A, Shao Zhiping, Georgakopoulos Anastasios, Robakis Nikolaos K",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25985800",
+                "year": "2015"
+            },
+            {
+                "score": "0.3333333333333333",
+                "title": "The cytoplasmic domain of Alzheimer's amyloid-beta protein precursor causes sustained apoptosis signal-regulating kinase 1/c-Jun NH2-terminal kinase-mediated neurotoxic signal via dimerization.",
+                "journal": "The Journal of pharmacology and experimental therapeutics",
+                "author": "Hashimoto Yuichi, Niikura Takako, Chiba Tomohiro, Tsukamoto Emi, Kadowaki Hisae, Nishitoh Hideki, Yamagishi Yohichi, Ishizaka Miho, Yamada Marina, Nawa Mikiro, Terashita Kenzo, Aiso Sadakazu, Ichijo Hidenori, Nishimoto Ikuo",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12829723",
+                "year": "2003"
+            },
+            {
+                "score": "0.3333333333333333",
+                "title": "ESCRTs regulate amyloid precursor protein sorting in multivesicular bodies and intracellular amyloid-\u03b2 accumulation.",
+                "journal": "Journal of cell science",
+                "author": "Edgar James R, Will\u00e9n Katarina, Gouras Gunnar K, Futter Clare E",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/26002056",
+                "year": "2015"
+            }
+        ],
+        "parameter": "biomarkers"
+    },
+    {
+        "publications": [],
+        "parameter": "tumorType"
+    },
+    {
+        "publications": [
+            {
+                "score": "1.0",
+                "title": "End-of-life care for persons with advanced Alzheimer disease: design and baseline data from the ALFINE study.",
+                "journal": "The journal of nutrition, health & aging",
+                "author": "Nourhash\u00e9mi F, Gillette S, Cantet C, Stilmunkes A, Saffon N, Roug\u00e9-Bugat M E, Vellas B, Rolland Y",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/22555791",
+                "year": "2012"
+            },
+            {
+                "score": "1.0",
+                "title": "Can multidisciplinary guidelines improve the palliation of symptoms in the terminal phase of dementia?",
+                "journal": "International journal of palliative nursing",
+                "author": "Lloyd-Williams Mari, Payne Sheila",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12271257",
+                "year": "2002"
+            },
+            {
+                "score": "0.5",
+                "title": "Pain assessment and management in cognitively impaired nursing home residents: association of certified nursing assistant pain report, Minimum Data Set pain report, and analgesic medication use.",
+                "journal": "Journal of the American Geriatrics Society",
+                "author": "Fisher Susan E, Burgio Louis D, Thorn Beverly E, Allen-Burge Rebecca, Gerstle John, Roth David L, Allen Scott J",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12028260",
+                "year": "2002"
+            },
+            {
+                "score": "0.5",
+                "title": "Lower respiratory infections in nursing home residents with dementia: a tale of two countries.",
+                "journal": "The Gerontologist",
+                "author": "Mehr David R, van der Steen Jenny T, Kruse Robin L, Ooms Marcel E, Rantz Marilyn, Ribbe Miel W",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12711728",
+                "year": "2003"
+            }
+        ],
+        "parameter": "drugGroups"
+    },
+    {
+        "publications": [
+            {
+                "score": "0.2222222222222222",
+                "title": "Unexpected dementia following prophylactic cranial irradiation for small cell lung cancer: case report.",
+                "journal": "Journal of neuro-oncology",
+                "author": "D'Ambrosio David J, Cohen Roger B, Glass Jon, Konski Andre, Buyyounouski Mark K, Feigenberg Steven J",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/17447010",
+                "year": "2007"
+            },
+            {
+                "score": "0.2222222222222222",
+                "title": "Effects of cell cycle inhibitors on tau phosphorylation in N2aTau3R cells.",
+                "journal": "Journal of molecular neuroscience : MN",
+                "author": "Conejero-Goldberg Concepcion, Townsend Kirk, Davies Peter",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/18278567",
+                "year": "2008"
+            },
+            {
+                "score": "0.2222222222222222",
+                "title": "Overexpression of tau protein inhibits kinesin-dependent trafficking of vesicles, mitochondria, and endoplasmic reticulum: implications for Alzheimer's disease.",
+                "journal": "The Journal of cell biology",
+                "author": "Ebneth A, Godemann R, Stamer K, Illenberger S, Trinczek B, Mandelkow E",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/9813097",
+                "year": "1998"
+            },
+            {
+                "score": "0.2222222222222222",
+                "title": "Late magnetic resonance imaging features of leukoencephalopathy in children with central nervous system tumours following high-dose methotrexate and neuraxis radiation therapy.",
+                "journal": "European journal of cancer (Oxford, England : 1990)",
+                "author": "Kellie Stewart J, Chaku Jyoti, Lockwood Liane R, O'Regan Peter, Waters Keith D, Wong Christopher K F",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16026694",
+                "year": "2005"
+            }
+        ],
+        "parameter": "chemotherapyDrugs"
+    },
+    {
+        "publications": [
+            {
+                "score": "0.5",
+                "title": "Effectiveness of gabapentin for the treatment of behavioral disorders in dementia.",
+                "journal": "Journal of clinical psychopharmacology",
+                "author": "Herrmann N, Lanct\u00f4t K, Myszak M",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/10653214",
+                "year": "2000"
+            },
+            {
+                "score": "0.5",
+                "title": "Cholesterol, synaptic function and Alzheimer's disease.",
+                "journal": "Pharmacopsychiatry",
+                "author": "Koudinov Alexei R, Koudinova Natalia V",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/14574623",
+                "year": "2003"
+            },
+            {
+                "score": "0.5",
+                "title": "Acyl-coenzyme A:cholesterol acyltransferase 1 blockage enhances autophagy in the neurons of triple transgenic Alzheimer's disease mouse and reduces human P301L-tau content at the presymptomatic stage.",
+                "journal": "Neurobiology of aging",
+                "author": "Shibuya Yohei, Niu Zhaoyang, Bryleva Elena Y, Harris Brent T, Murphy Stephanie R, Kheirollah Alireza, Bowen Zachary D, Chang Catherine C Y, Chang Ta-Yuan",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25930235",
+                "year": "2015"
+            },
+            {
+                "score": "0.5",
+                "title": "In-vivo measurements of regional acetylcholine esterase activity in degenerative dementia: comparison with blood flow and glucose metabolism.",
+                "journal": "Journal of neural transmission (Vienna, Austria : 1996)",
+                "author": "Herholz K, Bauer B, Wienhard K, Kracht L, Mielke R, Lenz M O, Strotmann T, Heiss W D",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/11458998",
+                "year": "2000"
+            }
+        ],
+        "parameter": "drugs"
+    },
+    {
+        "publications": [
+            {
+                "score": "0.16666666666666666",
+                "title": "Role of the immune system in the pathogenesis, prevention and treatment of Alzheimer's disease.",
+                "journal": "Drugs & aging",
+                "author": "Blasko Imrich, Grubeck-Loebenstein Beatrix",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12534311",
+                "year": "2003"
+            },
+            {
+                "score": "0.16666666666666666",
+                "title": "Current issues in the treatment of human diseases by mucosal tolerance.",
+                "journal": "Annals of the New York Academy of Sciences",
+                "author": "Weiner Howard L",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15681760",
+                "year": "2004"
+            },
+            {
+                "score": "0.16666666666666666",
+                "title": "[Is there a treatment for Alzheimer's disease?].",
+                "journal": "Revue medicale suisse",
+                "author": "Joray S, Ghika J, von Gunten A, B\u00fcla C, Gold G, Assal F",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15977708",
+                "year": "2005"
+            },
+            {
+                "score": "0.16666666666666666",
+                "title": "Immunization therapy in Alzheimer's disease.",
+                "journal": "Expert review of neurotherapeutics",
+                "author": "Mor Felix, Monsonego Alon",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16734513",
+                "year": "2006"
+            }
+        ],
+        "parameter": "oncologicalTreatments"
+    },
+    {
+        "publications": [
+            {
+                "score": "0.16666666666666666",
+                "title": "Neuroprotective effects of the anti-cancer drug sunitinib in models of HIV neurotoxicity suggests potential for the treatment of neurodegenerative disorders.",
+                "journal": "British journal of pharmacology",
+                "author": "Wrasidlo Wolf, Crews Leslie A, Tsigelny Igor F, Stocking Emily, Kouznetsova Valentina L, Price Diana, Paulino Amy, Gonzales Tania, Overk Cassia R, Patrick Christina, Rockenstein Edward, Masliah Eliezer",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25117211",
+                "year": "2014"
+            }
+        ],
+        "parameter": "tkiDrugs"
+    },
+    {
+        "publications": [],
+        "parameter": "immunotherapyDrugs"
+    },
+    {
+        "publications": [
+            {
+                "score": "0.6666666666666666",
+                "title": "A clinical registry of dementia based on the principle of epidemiological surveillance.",
+                "journal": "BMC neurology",
+                "author": "Garre-Olmo Josep, Flaqu\u00e9 Margarita, Gich Jordi, Pulido Teresa Osuna, Turbau Josefina, Vallmajo Natalia, Vi\u00f1as Marta, L\u00f3pez-Pousa Secund\u00ed",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/19175921",
+                "year": "2009"
+            },
+            {
+                "score": "0.6666666666666666",
+                "title": "Association of sleep-disordered breathing with decreased cognitive function among patients with dementia.",
+                "journal": "Journal of sleep research",
+                "author": "Aoki Kiyoaki, Matsuo Masahiro, Takahashi Masahiro, Murakami Junichi, Aoki Yasusuke, Aoki Naosuke, Mizumoto Hirotaka, Namikawa Ayako, Hara Hiroko, Miyagawa Masaharu, Kadotani Hiroshi, Yamada Naoto",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/24975686",
+                "year": "2014"
+            },
+            {
+                "score": "0.6666666666666666",
+                "title": "Accelerated Vascular Aging as a Paradigm for Hypertensive Vascular Disease: Prevention and Therapy.",
+                "journal": "The Canadian journal of cardiology",
+                "author": "Barton Matthias, Husmann Marc, Meyer Matthias R",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/27118295",
+                "year": "2016"
+            },
+            {
+                "score": "0.6666666666666666",
+                "title": "Treatment of cardiovascular risk factors to prevent cognitive decline and dementia: a systematic review.",
+                "journal": "Vascular health and risk management",
+                "author": "Ligthart Suzanne A, Moll van Charante Eric P, Van Gool Willem A, Richard Edo",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/20859546",
+                "year": "2010"
+            }
+        ],
+        "parameter": "comorbidities"
+    }
+]

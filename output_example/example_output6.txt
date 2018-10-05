@@ -1,0 +1,288 @@
+[
+    {
+        "parameter": "immunotherapyDrugs",
+        "publications": [],
+        "drugInteractions": [],
+        "sideEffects": []
+    },
+    {
+        "parameter": "comorbidities",
+        "publications": [
+            {
+                "score": "0.75",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/11649883",
+                "year": "1986",
+                "author": "1986",
+                "title": "Legal perceptions and medical decision making.",
+                "journal": "The Milbank quarterly"
+            },
+            {
+                "score": "0.75",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/17234040",
+                "year": "2007",
+                "author": "2007",
+                "title": "An assessment of the attitudes of potential caregivers toward the abuse of elderly persons with and without dementia.",
+                "journal": "International psychogeriatrics"
+            },
+            {
+                "score": "0.5",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15370053",
+                "year": "2004",
+                "author": "2004",
+                "title": "Awareness of financial skills in dementia.",
+                "journal": "Aging & mental health"
+            },
+            {
+                "score": "0.5",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/19735595",
+                "year": "2009",
+                "author": "2009",
+                "title": "International price comparisons of Alzheimer's drugs: a way to close the affordability gap.",
+                "journal": "International psychogeriatrics"
+            },
+            {
+                "score": "0.5",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16870037",
+                "year": "2007",
+                "author": "2007",
+                "title": "Economic impact of dementia in developing countries: an evaluation of costs of Alzheimer-type dementia in Argentina.",
+                "journal": "International psychogeriatrics"
+            },
+            {
+                "score": "0.5",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/21037127",
+                "year": "2010",
+                "author": "2010",
+                "title": "Predictors of performance on the MMSE and the DRS-2 among American Indian elders.",
+                "journal": "The Journal of neuropsychiatry and clinical neurosciences"
+            }
+        ],
+        "drugInteractions": [],
+        "sideEffects": []
+    },
+    {
+        "parameter": "chemotherapyDrugs",
+        "publications": [
+            {
+                "score": "1.0",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16165254",
+                "year": "2006",
+                "author": "2006",
+                "title": "Identification of a mutant-like conformation of p53 in fibroblasts from sporadic Alzheimer's disease patients.",
+                "journal": "Neurobiology of aging"
+            },
+            {
+                "score": "1.0",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/18278567",
+                "year": "2008",
+                "author": "2008",
+                "title": "Effects of cell cycle inhibitors on tau phosphorylation in N2aTau3R cells.",
+                "journal": "Journal of molecular neuroscience : MN"
+            },
+            {
+                "score": "1.0",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12917330",
+                "year": "2003",
+                "author": "2003",
+                "title": "Nuclease-deficient FEN-1 blocks Rad51/BRCA1-mediated repair and causes trinucleotide repeat instability.",
+                "journal": "Molecular and cellular biology"
+            },
+            {
+                "score": "1.0",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/22980637",
+                "year": "2012",
+                "author": "2012",
+                "title": "Target-based selection of flavonoids for neurodegenerative disorders.",
+                "journal": "Trends in pharmacological sciences"
+            }
+        ],
+        "drugInteractions": [],
+        "sideEffects": []
+    },
+    {
+        "parameter": "oncologicalTreatments",
+        "publications": [
+            {
+                "score": "0.16666666666666666",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12534311",
+                "year": "2003",
+                "author": "2003",
+                "title": "Role of the immune system in the pathogenesis, prevention and treatment of Alzheimer's disease.",
+                "journal": "Drugs & aging"
+            },
+            {
+                "score": "0.16666666666666666",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15681760",
+                "year": "2004",
+                "author": "2004",
+                "title": "Current issues in the treatment of human diseases by mucosal tolerance.",
+                "journal": "Annals of the New York Academy of Sciences"
+            },
+            {
+                "score": "0.16666666666666666",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15977708",
+                "year": "2005",
+                "author": "2005",
+                "title": "[Is there a treatment for Alzheimer's disease?].",
+                "journal": "Revue medicale suisse"
+            },
+            {
+                "score": "0.16666666666666666",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16734513",
+                "year": "2006",
+                "author": "2006",
+                "title": "Immunization therapy in Alzheimer's disease.",
+                "journal": "Expert review of neurotherapeutics"
+            },
+            {
+                "score": "0.16666666666666666",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16766200",
+                "year": "2006",
+                "author": "2006",
+                "title": "Anti-Abeta single-chain antibody delivery via adeno-associated virus for treatment of Alzheimer's disease.",
+                "journal": "Neurobiology of disease"
+            },
+            {
+                "score": "0.16666666666666666",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16842179",
+                "year": "2006",
+                "author": "2006",
+                "title": "Immunotherapy for conformational diseases.",
+                "journal": "Current pharmaceutical design"
+            }
+        ],
+        "drugInteractions": [],
+        "sideEffects": []
+    },
+    {
+        "parameter": "biomarkers",
+        "publications": [
+            {
+                "score": "0.3333333333333333",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/17937893",
+                "year": "2007",
+                "author": "2007",
+                "title": "[Astrocytes in Huntington's chorea: accomplice or guilty of the neuronal death?].",
+                "journal": "Medecine sciences : M/S"
+            },
+            {
+                "score": "0.3333333333333333",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25985800",
+                "year": "2015",
+                "author": "2015",
+                "title": "Presenilin 1 is necessary for neuronal, but not glial, EGFR expression and neuroprotection via \u03b3-secretase-independent transcriptional mechanisms.",
+                "journal": "FASEB journal : official publication of the Federation of American Societies for Experimental Biology"
+            },
+            {
+                "score": "0.3333333333333333",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12829723",
+                "year": "2003",
+                "author": "2003",
+                "title": "The cytoplasmic domain of Alzheimer's amyloid-beta protein precursor causes sustained apoptosis signal-regulating kinase 1/c-Jun NH2-terminal kinase-mediated neurotoxic signal via dimerization.",
+                "journal": "The Journal of pharmacology and experimental therapeutics"
+            },
+            {
+                "score": "0.3333333333333333",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/26002056",
+                "year": "2015",
+                "author": "2015",
+                "title": "ESCRTs regulate amyloid precursor protein sorting in multivesicular bodies and intracellular amyloid-\u03b2 accumulation.",
+                "journal": "Journal of cell science"
+            },
+            {
+                "score": "0.3333333333333333",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/23238278",
+                "year": "2013",
+                "author": "2013",
+                "title": "Suppressive effects of SuHeXiang Wan on amyloid-\u03b242-induced extracellular signal-regulated kinase hyperactivation and glial cell proliferation in a transgenic Drosophila model of Alzheimer's disease.",
+                "journal": "Biological & pharmaceutical bulletin"
+            },
+            {
+                "score": "0.3333333333333333",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/24116161",
+                "year": "2013",
+                "author": "2013",
+                "title": "Grb2 is regulated by foxd3 and has roles in preventing accumulation and aggregation of mutant huntingtin.",
+                "journal": "PloS one"
+            }
+        ],
+        "drugInteractions": [],
+        "sideEffects": []
+    },
+    {
+        "parameter": "tumorType",
+        "publications": [],
+        "drugInteractions": [],
+        "sideEffects": []
+    },
+    {
+        "parameter": "tkiDrugs",
+        "publications": [
+            {
+                "score": "1.0",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25117211",
+                "year": "2014",
+                "author": "2014",
+                "title": "Neuroprotective effects of the anti-cancer drug sunitinib in models of HIV neurotoxicity suggests potential for the treatment of neurodegenerative disorders.",
+                "journal": "British journal of pharmacology"
+            }
+        ],
+        "drugInteractions": [],
+        "sideEffects": []
+    },
+    {
+        "parameter": "drugs",
+        "publications": [
+            {
+                "score": "0.5",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/10653214",
+                "year": "2000",
+                "author": "2000",
+                "title": "Effectiveness of gabapentin for the treatment of behavioral disorders in dementia.",
+                "journal": "Journal of clinical psychopharmacology"
+            },
+            {
+                "score": "0.5",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/14574623",
+                "year": "2003",
+                "author": "2003",
+                "title": "Cholesterol, synaptic function and Alzheimer's disease.",
+                "journal": "Pharmacopsychiatry"
+            },
+            {
+                "score": "0.5",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25930235",
+                "year": "2015",
+                "author": "2015",
+                "title": "Acyl-coenzyme A:cholesterol acyltransferase 1 blockage enhances autophagy in the neurons of triple transgenic Alzheimer's disease mouse and reduces human P301L-tau content at the presymptomatic stage.",
+                "journal": "Neurobiology of aging"
+            },
+            {
+                "score": "0.5",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/11458998",
+                "year": "2000",
+                "author": "2000",
+                "title": "In-vivo measurements of regional acetylcholine esterase activity in degenerative dementia: comparison with blood flow and glucose metabolism.",
+                "journal": "Journal of neural transmission (Vienna, Austria : 1996)"
+            },
+            {
+                "score": "0.5",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15233279",
+                "year": "2004",
+                "author": "2004",
+                "title": "A simple method for the detection of abnormal brain regions in Alzheimer's disease patients using [11C]MP4A: comparison with [123I]IMP SPECT.",
+                "journal": "Annals of nuclear medicine"
+            },
+            {
+                "score": "0.5",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/23820589",
+                "year": "2013",
+                "author": "2013",
+                "title": "Cholinergic activity correlates with reserve proxies in Alzheimer's disease.",
+                "journal": "Neurobiology of aging"
+            }
+        ],
+        "drugInteractions": [],
+        "sideEffects": []
+    }
+]
