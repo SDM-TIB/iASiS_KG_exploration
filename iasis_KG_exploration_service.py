@@ -20,14 +20,9 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 #KG="http://194.95.157.198:11230/sparql"
-#KG = os.environ["IASISKG_ENDPOINT"]
-KG="http://node2.research.tib.eu:7171/sparql"
+KG = os.environ["IASISKG_ENDPOINT"]
+#KG="http://node2.research.tib.eu:7171/sparql"
 EMPTY_JSON = "{}"
-
-
-#DBPEDIA_ENDPOINT="http://dbpedia.org/sparql"
-#BIO2RDF_ENDPOINT="http://bio2rdf.org/sparql"
-
 
 app = Flask(__name__)
 
@@ -303,11 +298,9 @@ def proccesing_response(input_dicc, limit, ltypes):
                     pub1['author'] = results_pub[id_pub]['author']
                     pub1['journal'] = results_pub[id_pub]['journal']
                     pub1['year'] = results_pub[id_pub]["year"]
-                    pub1['score'] = str(score)
-                    print(pub1)
+                    pub1['score'] = str(score)    
                     pubs.append(pub1)
-                else:
-                    print("+++++ Missing ID ", id_pub)
+                
             codicc['publications'] = pubs
             allpubs.append(codicc)
     return allpubs
@@ -396,7 +389,7 @@ def run_semep_drug_service():
         # else:
         #    EMPTY_JSON
         r = json.dumps(response, indent=4)
-            
+                   
     logger.info("Sending the results: ")
     response = make_response(r, 200)
     response.mimetype = "application/javascript"
