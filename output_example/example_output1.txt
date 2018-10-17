@@ -1,99 +1,332 @@
 [
     {
-        "parameter": "comorbidities",
-        "links": [
-            {
-                "title": "Cholesterol dysfunction in neurodegenerative diseases: is Huntington's disease in the list?",
-                "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/17067733"
-            },
-            {
-                "title": "A clinical registry of dementia based on the principle of epidemiological surveillance.",
-                "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/19175921"
-            },
-            {
-                "title": "Aluminium in parenteral nutrition: a systematic review.",
-                "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/23403874"
-            },
-            {
-                "title": "Association of sleep-disordered breathing with decreased cognitive function among patients with dementia.",
-                "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/24975686"
-            }
-        ]
+        "publications": [],
+        "parameter": "drugsGroups"
     },
     {
-        "parameter": "chemotherapyDrugs",
-        "links": [
+        "publications": [
             {
-                "title": "Identification of a mutant-like conformation of p53 in fibroblasts from sporadic Alzheimer's disease patients.",
-                "score": "1.0",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16165254"
+                "title": "Silver-enhanced in situ hybridization for determination of EGFR copy number alterations in non-small cell lung cancer.",
+                "year": "2012",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/23154768",
+                "score": "0.5",
+                "author": "Wulf Marie-Angela, Bode Beata, Zimmermann Dieter, Rufibach Kaspar, Weder Walter, Moch Holger, Soltermann Alex, Tischler Verena",
+                "journal": "The American journal of surgical pathology"
             },
-            {
-                "title": "Effects of cell cycle inhibitors on tau phosphorylation in N2aTau3R cells.",
-                "score": "1.0",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/18278567"
-            },
-            {
-                "title": "Nuclease-deficient FEN-1 blocks Rad51/BRCA1-mediated repair and causes trinucleotide repeat instability.",
-                "score": "1.0",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12917330"
-            },
-            {
-                "title": "Target-based selection of flavonoids for neurodegenerative disorders.",
-                "score": "1.0",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/22980637"
-            }
-        ]
-    },
-    {
-        "parameter": "drugs",
-        "links": [
             {
                 "title": "Effectiveness of gabapentin for the treatment of behavioral disorders in dementia.",
+                "year": "2000",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/10653214",
                 "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/10653214"
+                "author": "Herrmann N, Lanct\u00f4t K, Myszak M",
+                "journal": "Journal of clinical psychopharmacology"
             },
             {
                 "title": "Cholesterol, synaptic function and Alzheimer's disease.",
+                "year": "2003",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/14574623",
                 "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/14574623"
+                "author": "Koudinov Alexei R, Koudinova Natalia V",
+                "journal": "Pharmacopsychiatry"
             },
             {
                 "title": "Acyl-coenzyme A:cholesterol acyltransferase 1 blockage enhances autophagy in the neurons of triple transgenic Alzheimer's disease mouse and reduces human P301L-tau content at the presymptomatic stage.",
+                "year": "2015",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25930235",
                 "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25930235"
+                "author": "Shibuya Yohei, Niu Zhaoyang, Bryleva Elena Y, Harris Brent T, Murphy Stephanie R, Kheirollah Alireza, Bowen Zachary D, Chang Catherine C Y, Chang Ta-Yuan",
+                "journal": "Neurobiology of aging"
             },
             {
-                "title": "In-vivo measurements of regional acetylcholine esterase activity in degenerative dementia: comparison with blood flow and glucose metabolism.",
+                "title": "Inhibition by magnesium and calcium acetates of lead subacetate- and nickel acetate-induced lung tumors in strain A mice.",
+                "year": "1984",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/6704965",
                 "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/11458998"
-            }
-        ]
-    },
-    {
-        "parameter": "tumorType",
-        "links": []
-    },
-    {
-        "parameter": "immunotherapyDrugs",
-        "links": []
-    },
-    {
-        "parameter": "biomarkers",
-        "links": []
-    },
-    {
-        "parameter": "tkiDrugs",
-        "links": [
+                "author": "Poirier L A, Theiss J C, Arnold L J, Shimkin M B",
+                "journal": "Cancer research"
+            },
             {
-                "title": "Neuroprotective effects of the anti-cancer drug sunitinib in models of HIV neurotoxicity suggests potential for the treatment of neurodegenerative disorders.",
-                "score": "1.0",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25117211"
+                "title": "[Value of 18F-FDG and 11C-MET PET-CT in differentiation of brain ringlike-enhanced neoplastic and non-neoplastic lesions on MRI imaging].",
+                "year": "2009",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/19538892",
+                "score": "0.5",
+                "author": "Cai Li, Gao Shuo, Li Da-cheng, Li Yan-sheng, Chen Qiu-song, Xing Xi-ling",
+                "journal": "Zhonghua zhong liu za zhi [Chinese journal of oncology]"
             }
-        ]
+        ],
+        "parameter": "drugs"
+    },
+    {
+        "publications": [
+            {
+                "title": "Cholesterol dysfunction in neurodegenerative diseases: is Huntington's disease in the list?",
+                "year": "2006",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/17067733",
+                "score": "0.5",
+                "author": "Valenza Marta, Cattaneo Elena",
+                "journal": "Progress in neurobiology"
+            },
+            {
+                "title": "A clinical registry of dementia based on the principle of epidemiological surveillance.",
+                "year": "2009",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/19175921",
+                "score": "0.5",
+                "author": "Garre-Olmo Josep, Flaqu\u00e9 Margarita, Gich Jordi, Pulido Teresa Osuna, Turbau Josefina, Vallmajo Natalia, Vi\u00f1as Marta, L\u00f3pez-Pousa Secund\u00ed",
+                "journal": "BMC neurology"
+            },
+            {
+                "title": "Aluminium in parenteral nutrition: a systematic review.",
+                "year": "2013",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/23403874",
+                "score": "0.5",
+                "author": "Hern\u00e1ndez-S\u00e1nchez A, Tejada-Gonz\u00e1lez P, Arteta-Jim\u00e9nez M",
+                "journal": "European journal of clinical nutrition"
+            },
+            {
+                "title": "Association of sleep-disordered breathing with decreased cognitive function among patients with dementia.",
+                "year": "2014",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/24975686",
+                "score": "0.5",
+                "author": "Aoki Kiyoaki, Matsuo Masahiro, Takahashi Masahiro, Murakami Junichi, Aoki Yasusuke, Aoki Naosuke, Mizumoto Hirotaka, Namikawa Ayako, Hara Hiroko, Miyagawa Masaharu, Kadotani Hiroshi, Yamada Naoto",
+                "journal": "Journal of sleep research"
+            },
+            {
+                "title": "Atorvastatin May Correct Dyslipidemia in Adult Patients at Risk for Alzheimer's Disease Through an Anti-Inflammatory Pathway.",
+                "year": "2016",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/26666876",
+                "score": "0.5",
+                "author": "Zhao Liandong, Zhao Qitao, Zhou Yong, Zhao Ying, Wan Qi",
+                "journal": "CNS & neurological disorders drug targets"
+            },
+            {
+                "title": "Accelerated Vascular Aging as a Paradigm for Hypertensive Vascular Disease: Prevention and Therapy.",
+                "year": "2016",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/27118295",
+                "score": "0.5",
+                "author": "Barton Matthias, Husmann Marc, Meyer Matthias R",
+                "journal": "The Canadian journal of cardiology"
+            }
+        ],
+        "parameter": "comorbidities"
+    },
+    {
+        "publications": [],
+        "parameter": "oncologicalTreatments"
+    },
+    {
+        "publications": [
+            {
+                "title": "[The efficacy of aprepitant and palonosetron on cisplatin doublet in lung cancer].",
+                "year": "2011",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/21996961",
+                "score": "1.0",
+                "author": "Suzuki Chinami, Hiura Kazuya, Sato Hiroyasu, Komori Hitoshi, Yamamoto Makoto",
+                "journal": "Gan to kagaku ryoho. Cancer & chemotherapy"
+            },
+            {
+                "title": "[Two patients with distant metastases from head and neck squamous cell carcinomas successfully treated with docetaxel and cisplatin].",
+                "year": "2003",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12557711",
+                "score": "1.0",
+                "author": "Okami Kenji, Sakai Akihiro, Onuki Junichi, Odagiri Kyoko, Takahashi Masahiro",
+                "journal": "Gan to kagaku ryoho. Cancer & chemotherapy"
+            },
+            {
+                "title": "Phase III randomized trial of docetaxel in combination with cisplatin or carboplatin or vinorelbine plus cisplatin in advanced non--small cell lung cancer: interim analysis.",
+                "year": "2001",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/11441409",
+                "score": "1.0",
+                "author": "Belani C",
+                "journal": "Seminars in oncology"
+            },
+            {
+                "title": "Neoadjuvant chemotherapy with docetaxel in non--small cell lung cancer.",
+                "year": "2001",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/11441413",
+                "score": "1.0",
+                "author": "Mattson K",
+                "journal": "Seminars in oncology"
+            },
+            {
+                "title": "Activity of high-dose toremifene plus cisplatin in platinum-treated non-small-cell lung cancer: a phase II California Cancer Consortium Trial.",
+                "year": "2001",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/11488520",
+                "score": "1.0",
+                "author": "Lara P N, Gandara D R, Longmate J, Gumerlock P H, Lau D H, Edelman M J, Gandour-Edwards R, Mack P C, Israel V, Raschko J, Frankel P, Perez E A, Lenz H J, Doroshow J H",
+                "journal": "Cancer chemotherapy and pharmacology"
+            },
+            {
+                "title": "Experimental study of pulmonary artery infusion with cisplatin in a solitary pulmonary tumor model using a rat colorectal adenocarcinoma cell line.",
+                "year": "2001",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/11517575",
+                "score": "1.0",
+                "author": "Omiya H, Saito Y, Hattori R, Osako M, Imamura H",
+                "journal": "The Japanese journal of thoracic and cardiovascular surgery : official publication of the Japanese Association for Thoracic Surgery = Nihon Kyobu Geka Gakkai zasshi"
+            }
+        ],
+        "parameter": "chemotherapyDrugs"
+    },
+    {
+        "publications": [
+            {
+                "title": "Epidermal growth factor receptor gene mutation in non-small cell lung cancer using highly sensitive and fast TaqMan PCR assay.",
+                "year": "2005",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16199108",
+                "score": "1.0",
+                "author": "Endo Katsuhiko, Konishi Akimitsu, Sasaki Hidefumi, Takada Minoru, Tanaka Hisaichi, Okumura Meinoshin, Kawahara Masaaki, Sugiura Hironori, Kuwabara Yoshiyuki, Fukai Ichiro, Matsumura Akihide, Yano Motoki, Kobayashi Yoshihiro, Mizuno Kotaro, Haneda Hiroshi, Suzuki Eriko, Iuchi Keiji, Fujii Yoshitaka",
+                "journal": "Lung cancer (Amsterdam, Netherlands)"
+            },
+            {
+                "title": "Diverse drug-resistance mechanisms can emerge from drug-tolerant cancer persister cells.",
+                "year": "2016",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/26891683",
+                "score": "1.0",
+                "author": "Ramirez Michael, Rajaram Satwik, Steininger Robert J, Osipchuk Daria, Roth Maike A, Morinishi Leanna S, Evans Louise, Ji Weiyue, Hsu Chien-Hsiang, Thurley Kevin, Wei Shuguang, Zhou Anwu, Koduru Prasad R, Posner Bruce A, Wu Lani F, Altschuler Steven J",
+                "journal": "Nature communications"
+            },
+            {
+                "title": "Chemotherapy and intercalated gefitinib or erlotinib in the treatment of advanced non-small-cell lung cancer.",
+                "year": "2017",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/28152323",
+                "score": "1.0",
+                "author": "Rossi Antonio, La Salvia Anna, Di Maio Massimo",
+                "journal": "Expert review of respiratory medicine"
+            },
+            {
+                "title": "Association of EGFR L858R Mutation in Circulating Free DNA With Survival in the EURTAC Trial.",
+                "year": "2015",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/26181014",
+                "score": "1.0",
+                "author": "Karachaliou Niki, Mayo-de las Casas Clara, Queralt Cristina, de Aguirre Itziar, Melloni Boris, Cardenal Felipe, Garcia-Gomez Ramon, Massuti Bartomeu, S\u00e1nchez Jos\u00e9 Miguel, Porta Ruth, Ponce-Aix Santiago, Moran Teresa, Carcereny Enric, Felip Enriqueta, Bover Isabel, Insa Amelia, Reguart Noem\u00ed, Isla Dolores, Vergnenegre Alain, de Marinis Filippo, Gervais Radj, Corre Romain, Paz-Ares Luis, Morales-Espinosa Daniela, Viteri Santiago, Drozdowskyj Ana, Jordana-Ariza N\u00faria, Ramirez-Serrano Jose Luis, Molina-Vila Miguel Angel, Rosell Rafael",
+                "journal": "JAMA oncology"
+            },
+            {
+                "title": "Combining onartuzumab with erlotinib inhibits growth of non-small cell lung cancer with activating EGFR mutations and HGF overexpression.",
+                "year": "2015",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25522765",
+                "score": "1.0",
+                "author": "Sano Yuji, Hashimoto Eri, Nakatani Noriaki, Abe Masaichi, Satoh Yasuko, Sakata Kiyoaki, Fujii Toshihiko, Fujimoto-Ouchi Kaori, Sugimoto Masamichi, Nagahashi Shigehisa, Aoki Masahiro, Motegi Hiroshi, Sasaki Eiichi, Yatabe Yasushi",
+                "journal": "Molecular cancer therapeutics"
+            },
+            {
+                "title": "RB loss in resistant EGFR mutant lung adenocarcinomas that transform to small-cell lung cancer.",
+                "year": "2015",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25758528",
+                "score": "1.0",
+                "author": "Niederst Matthew J, Sequist Lecia V, Poirier John T, Mermel Craig H, Lockerman Elizabeth L, Garcia Angel R, Katayama Ryohei, Costa Carlotta, Ross Kenneth N, Moran Teresa, Howe Emily, Fulton Linnea E, Mulvey Hillary E, Bernardo Lindsay A, Mohamoud Farhiya, Miyoshi Norikatsu, VanderLaan Paul A, Costa Daniel B, J\u00e4nne Pasi A, Borger Darrell R, Ramaswamy Sridhar, Shioda Toshi, Iafrate Anthony J, Getz Gad, Rudin Charles M, Mino-Kenudson Mari, Engelman Jeffrey A",
+                "journal": "Nature communications"
+            }
+        ],
+        "parameter": "tkiDrugs"
+    },
+    {
+        "publications": [
+            {
+                "title": "Immune Checkpoint Blockade: A New Era for Non-Small Cell Lung Cancer.",
+                "year": "2016",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/27484062",
+                "score": "1.0",
+                "author": "Califano Raffaele, Kerr Keith, Morgan Robert David, Lo Russo Giuseppe, Garassino Marina, Morgillo Floriana, Rossi Antonio",
+                "journal": "Current oncology reports"
+            },
+            {
+                "title": "[Not Available].",
+                "year": "2016",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/27494968",
+                "score": "1.0",
+                "author": "Moro-Sibilot Denis, Ferrer L\u00e9onie, Levra Matteo Giaj, Toffart Anne Claire",
+                "journal": "Bulletin du cancer"
+            },
+            {
+                "title": "Benefit-Risk Summary of Nivolumab for Patients With Metastatic Squamous Cell Lung Cancer After Platinum-Based Chemotherapy: A Report From the US Food and Drug Administration.",
+                "year": "2016",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/26470053",
+                "score": "1.0",
+                "author": "Kazandjian Dickran, Khozin Sean, Blumenthal Gideon, Zhang Lijun, Tang Shenghui, Libeg Meredith, Kluetz Paul, Sridhara Rajeshwari, Keegan Patricia, Pazdur Richard",
+                "journal": "JAMA oncology"
+            },
+            {
+                "title": "Emerging immunotherapies in the treatment of non-small cell lung cancer (NSCLC): the role of immune checkpoint inhibitors.",
+                "year": "2015",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/24685885",
+                "score": "1.0",
+                "author": "Langer Corey J",
+                "journal": "American journal of clinical oncology"
+            },
+            {
+                "title": "Nivolumab versus Docetaxel in Advanced Nonsquamous Non-Small-Cell Lung Cancer.",
+                "year": "2015",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/26412456",
+                "score": "1.0",
+                "author": "Borghaei Hossein, Paz-Ares Luis, Horn Leora, Spigel David R, Steins Martin, Ready Neal E, Chow Laura Q, Vokes Everett E, Felip Enriqueta, Holgado Esther, Barlesi Fabrice, Kohlh\u00e4ufl Martin, Arrieta Oscar, Burgio Marco Angelo, Fayette J\u00e9r\u00f4me, Lena Herv\u00e9, Poddubskaya Elena, Gerber David E, Gettinger Scott N, Rudin Charles M, Rizvi Naiyer, Crin\u00f2 Lucio, Blumenschein George R, Antonia Scott J, Dorange C\u00e9cile, Harbison Christopher T, Graf Finckenstein Friedrich, Brahmer Julie R",
+                "journal": "The New England journal of medicine"
+            },
+            {
+                "title": "Response to anti-programmed cell death protein-1 antibodies in men treated for platinum refractory germ cell cancer relapsed after high-dose chemotherapy and stem cell transplantation.",
+                "year": "2017",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/28262583",
+                "score": "1.0",
+                "author": "Zsch\u00e4bitz Stefanie, Lasitschka Felix, Hadaschik Boris, Hofheinz Ralf-Dieter, Jentsch-Ullrich Kathleen, Gr\u00fcner Marcus, J\u00e4ger Dirk, Gr\u00fcllich Carsten",
+                "journal": "European journal of cancer (Oxford, England : 1990)"
+            }
+        ],
+        "parameter": "immunotherapyDrugs"
+    },
+    {
+        "publications": [],
+        "parameter": "tumorType"
+    },
+    {
+        "publications": [
+            {
+                "title": "The importance of molecular profiling in predicting response to epidermal growth factor receptor family inhibitors in non-small-cell lung cancer: focus on clinical trial results.",
+                "year": "2013",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/23582282",
+                "score": "0.3333333333333333",
+                "author": "Tsao Anne S, Papadimitrakopoulou Vassiliki",
+                "journal": "Clinical lung cancer"
+            },
+            {
+                "title": "[Value of serum carcinoembryonic antigen in prediction of chemotherapy efficacy and prognosis in patients with advanced non-small cell lung cancer treated with EGFR-tyrosine kinase inhibitor].",
+                "year": "2011",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/21875484",
+                "score": "0.3333333333333333",
+                "author": "Xu Chong-an, Su He, Liu Jia-li, Li Lin, Zou Hua-wei",
+                "journal": "Zhonghua zhong liu za zhi [Chinese journal of oncology]"
+            },
+            {
+                "title": "[Molecular pathology of the lungs. New perspectives by next generation sequencing].",
+                "year": "2013",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/23389825",
+                "score": "0.3333333333333333",
+                "author": "Vollbrecht C, K\u00f6nig K, Heukamp L, B\u00fcttner R, Odenthal M",
+                "journal": "Der Pathologe"
+            },
+            {
+                "title": "Activity of ixabepilone in oestrogen receptor-negative and oestrogen receptor-progesterone receptor-human epidermal growth factor receptor 2-negative metastatic breast cancer.",
+                "year": "2009",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/19683429",
+                "score": "0.3333333333333333",
+                "author": "Pivot Xavier B, Li Rubi K, Thomas Eva S, Chung Hyun-Cheol, Fein Luis E, Chan Valorie F, Jassem Jacek, de Mendoza Fernando Hurtado, Mukhopadyay Pralay, Roch\u00e9 Henri H",
+                "journal": "European journal of cancer (Oxford, England : 1990)"
+            },
+            {
+                "title": "Enhanced effect of epidermal growth factor on pulmonary metastasis and in vitro invasion of rat mammary carcinoma cells.",
+                "year": "1995",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/7889524",
+                "score": "0.3333333333333333",
+                "author": "Hamada J, Nagayasu H, Takayama M, Kawano T, Hosokawa M, Takeichi N",
+                "journal": "Cancer letters"
+            },
+            {
+                "title": "Antiproliferative effect of human interleukin-4 in human cancer cell lines: studies on the mechanism.",
+                "year": "1995",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/8535226",
+                "score": "0.3333333333333333",
+                "author": "Topp M S, Papadimitriou C A, Eitelbach F, Oelmann E, Koehler B, Oberberg D, Von Marschall Z, Reufi B, Stein H, Thiel E",
+                "journal": "Leukemia & lymphoma"
+            }
+        ],
+        "parameter": "biomarkers"
     }
 ]

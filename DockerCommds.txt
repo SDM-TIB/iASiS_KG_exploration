@@ -1,16 +1,14 @@
 Build the image:
-docker build -t semep_node_service:mai18 .
+docker build -t lc_exploration:latest .
 
 Run the service:
-docker run -p 5001:5001 semep_node_service:mai18
+docker run -p 5003:5003 lc_exploration:latest
 
 TAG the image:
-docker tag semep_node_service:mai18 gpalma/semep_node_service:mai18
+docker tag lc_exploration:latest gpalma/lc_exploration:latest
 
 Push the image:
-docker push gpalma/semep_node_service:mai18
+docker push gpalma/lc_exploration:latest
 
 Pull and run the image:
-docker run -p 5001:5001 gpalma/semep_node_service:mai18
-
-
+docker run -p 5003:5003 gpalma/lc_exploration:latest

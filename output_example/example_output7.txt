@@ -1,224 +1,280 @@
 [
     {
-        "parameter": "immunotherapyDrugs",
-        "publications": [],
-        "drugInteractions": [],
-        "sideEffects": []
-    },
-    {
-        "parameter": "comorbidities",
         "publications": [
             {
-                "score": "0.75",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/11649883",
-                "year": "1986",
-                "author": "1986",
-                "title": "Legal perceptions and medical decision making.",
-                "journal": "The Milbank quarterly"
-            },
-            {
-                "score": "0.75",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/17234040",
-                "year": "2007",
-                "author": "2007",
-                "title": "An assessment of the attitudes of potential caregivers toward the abuse of elderly persons with and without dementia.",
-                "journal": "International psychogeriatrics"
-            },
-            {
-                "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15370053",
-                "year": "2004",
-                "author": "2004",
-                "title": "Awareness of financial skills in dementia.",
-                "journal": "Aging & mental health"
-            },
-            {
-                "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/19735595",
-                "year": "2009",
-                "author": "2009",
-                "title": "International price comparisons of Alzheimer's drugs: a way to close the affordability gap.",
-                "journal": "International psychogeriatrics"
-            }
-        ],
-        "drugInteractions": [],
-        "sideEffects": []
-    },
-    {
-        "parameter": "chemotherapyDrugs",
-        "publications": [
-            {
-                "score": "1.0",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16165254",
-                "year": "2006",
-                "author": "2006",
-                "title": "Identification of a mutant-like conformation of p53 in fibroblasts from sporadic Alzheimer's disease patients.",
-                "journal": "Neurobiology of aging"
-            },
-            {
-                "score": "1.0",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/18278567",
-                "year": "2008",
-                "author": "2008",
-                "title": "Effects of cell cycle inhibitors on tau phosphorylation in N2aTau3R cells.",
-                "journal": "Journal of molecular neuroscience : MN"
-            },
-            {
-                "score": "1.0",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12917330",
-                "year": "2003",
-                "author": "2003",
-                "title": "Nuclease-deficient FEN-1 blocks Rad51/BRCA1-mediated repair and causes trinucleotide repeat instability.",
-                "journal": "Molecular and cellular biology"
-            },
-            {
-                "score": "1.0",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/22980637",
+                "title": "Silver-enhanced in situ hybridization for determination of EGFR copy number alterations in non-small cell lung cancer.",
                 "year": "2012",
-                "author": "2012",
-                "title": "Target-based selection of flavonoids for neurodegenerative disorders.",
-                "journal": "Trends in pharmacological sciences"
-            }
-        ],
-        "drugInteractions": [],
-        "sideEffects": []
-    },
-    {
-        "parameter": "oncologicalTreatments",
-        "publications": [
-            {
-                "score": "0.16666666666666666",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12534311",
-                "year": "2003",
-                "author": "2003",
-                "title": "Role of the immune system in the pathogenesis, prevention and treatment of Alzheimer's disease.",
-                "journal": "Drugs & aging"
-            },
-            {
-                "score": "0.16666666666666666",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15681760",
-                "year": "2004",
-                "author": "2004",
-                "title": "Current issues in the treatment of human diseases by mucosal tolerance.",
-                "journal": "Annals of the New York Academy of Sciences"
-            },
-            {
-                "score": "0.16666666666666666",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/15977708",
-                "year": "2005",
-                "author": "2005",
-                "title": "[Is there a treatment for Alzheimer's disease?].",
-                "journal": "Revue medicale suisse"
-            },
-            {
-                "score": "0.16666666666666666",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/16734513",
-                "year": "2006",
-                "author": "2006",
-                "title": "Immunization therapy in Alzheimer's disease.",
-                "journal": "Expert review of neurotherapeutics"
-            }
-        ],
-        "drugInteractions": [],
-        "sideEffects": []
-    },
-    {
-        "parameter": "biomarkers",
-        "publications": [
-            {
-                "score": "0.3333333333333333",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/17937893",
-                "year": "2007",
-                "author": "2007",
-                "title": "[Astrocytes in Huntington's chorea: accomplice or guilty of the neuronal death?].",
-                "journal": "Medecine sciences : M/S"
-            },
-            {
-                "score": "0.3333333333333333",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25985800",
-                "year": "2015",
-                "author": "2015",
-                "title": "Presenilin 1 is necessary for neuronal, but not glial, EGFR expression and neuroprotection via \u03b3-secretase-independent transcriptional mechanisms.",
-                "journal": "FASEB journal : official publication of the Federation of American Societies for Experimental Biology"
-            },
-            {
-                "score": "0.3333333333333333",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12829723",
-                "year": "2003",
-                "author": "2003",
-                "title": "The cytoplasmic domain of Alzheimer's amyloid-beta protein precursor causes sustained apoptosis signal-regulating kinase 1/c-Jun NH2-terminal kinase-mediated neurotoxic signal via dimerization.",
-                "journal": "The Journal of pharmacology and experimental therapeutics"
-            },
-            {
-                "score": "0.3333333333333333",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/26002056",
-                "year": "2015",
-                "author": "2015",
-                "title": "ESCRTs regulate amyloid precursor protein sorting in multivesicular bodies and intracellular amyloid-\u03b2 accumulation.",
-                "journal": "Journal of cell science"
-            }
-        ],
-        "drugInteractions": [],
-        "sideEffects": []
-    },
-    {
-        "parameter": "tumorType",
-        "publications": [],
-        "drugInteractions": [],
-        "sideEffects": []
-    },
-    {
-        "parameter": "tkiDrugs",
-        "publications": [
-            {
-                "score": "1.0",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25117211",
-                "year": "2014",
-                "author": "2014",
-                "title": "Neuroprotective effects of the anti-cancer drug sunitinib in models of HIV neurotoxicity suggests potential for the treatment of neurodegenerative disorders.",
-                "journal": "British journal of pharmacology"
-            }
-        ],
-        "drugInteractions": [],
-        "sideEffects": []
-    },
-    {
-        "parameter": "drugs",
-        "publications": [
-            {
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/23154768",
                 "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/10653214",
-                "year": "2000",
-                "author": "2000",
+                "author": "Wulf Marie-Angela, Bode Beata, Zimmermann Dieter, Rufibach Kaspar, Weder Walter, Moch Holger, Soltermann Alex, Tischler Verena",
+                "journal": "The American journal of surgical pathology"
+            },
+            {
                 "title": "Effectiveness of gabapentin for the treatment of behavioral disorders in dementia.",
+                "year": "2000",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/10653214",
+                "score": "0.5",
+                "author": "Herrmann N, Lanct\u00f4t K, Myszak M",
                 "journal": "Journal of clinical psychopharmacology"
             },
             {
-                "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/14574623",
-                "year": "2003",
-                "author": "2003",
                 "title": "Cholesterol, synaptic function and Alzheimer's disease.",
+                "year": "2003",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/14574623",
+                "score": "0.5",
+                "author": "Koudinov Alexei R, Koudinova Natalia V",
                 "journal": "Pharmacopsychiatry"
             },
             {
-                "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25930235",
-                "year": "2015",
-                "author": "2015",
                 "title": "Acyl-coenzyme A:cholesterol acyltransferase 1 blockage enhances autophagy in the neurons of triple transgenic Alzheimer's disease mouse and reduces human P301L-tau content at the presymptomatic stage.",
-                "journal": "Neurobiology of aging"
-            },
-            {
+                "year": "2015",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25930235",
                 "score": "0.5",
-                "url": "https://www.ncbi.nlm.nih.gov/pubmed/11458998",
-                "year": "2000",
-                "author": "2000",
-                "title": "In-vivo measurements of regional acetylcholine esterase activity in degenerative dementia: comparison with blood flow and glucose metabolism.",
-                "journal": "Journal of neural transmission (Vienna, Austria : 1996)"
+                "author": "Shibuya Yohei, Niu Zhaoyang, Bryleva Elena Y, Harris Brent T, Murphy Stephanie R, Kheirollah Alireza, Bowen Zachary D, Chang Catherine C Y, Chang Ta-Yuan",
+                "journal": "Neurobiology of aging"
             }
         ],
+        "sideEffects": [],
         "drugInteractions": [],
-        "sideEffects": []
+        "parameter": "drugs"
+    },
+    {
+        "publications": [
+            {
+                "title": "A clinical registry of dementia based on the principle of epidemiological surveillance.",
+                "year": "2009",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/19175921",
+                "score": "0.6666666666666666",
+                "author": "Garre-Olmo Josep, Flaqu\u00e9 Margarita, Gich Jordi, Pulido Teresa Osuna, Turbau Josefina, Vallmajo Natalia, Vi\u00f1as Marta, L\u00f3pez-Pousa Secund\u00ed",
+                "journal": "BMC neurology"
+            },
+            {
+                "title": "Association of sleep-disordered breathing with decreased cognitive function among patients with dementia.",
+                "year": "2014",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/24975686",
+                "score": "0.6666666666666666",
+                "author": "Aoki Kiyoaki, Matsuo Masahiro, Takahashi Masahiro, Murakami Junichi, Aoki Yasusuke, Aoki Naosuke, Mizumoto Hirotaka, Namikawa Ayako, Hara Hiroko, Miyagawa Masaharu, Kadotani Hiroshi, Yamada Naoto",
+                "journal": "Journal of sleep research"
+            },
+            {
+                "title": "Accelerated Vascular Aging as a Paradigm for Hypertensive Vascular Disease: Prevention and Therapy.",
+                "year": "2016",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/27118295",
+                "score": "0.6666666666666666",
+                "author": "Barton Matthias, Husmann Marc, Meyer Matthias R",
+                "journal": "The Canadian journal of cardiology"
+            },
+            {
+                "title": "Treatment of cardiovascular risk factors to prevent cognitive decline and dementia: a systematic review.",
+                "year": "2010",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/20859546",
+                "score": "0.6666666666666666",
+                "author": "Ligthart Suzanne A, Moll van Charante Eric P, Van Gool Willem A, Richard Edo",
+                "journal": "Vascular health and risk management"
+            }
+        ],
+        "sideEffects": [],
+        "drugInteractions": [],
+        "parameter": "comorbidities"
+    },
+    {
+        "publications": [
+            {
+                "title": "Management of NSCLC Disease Progression After First-Line EGFR Tyrosine Kinase Inhibitors: What Are the Issues and Potential Therapies?",
+                "year": "2016",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/27129321",
+                "score": "0.3333333333333333",
+                "author": "Califano Raffaele, Romanidou Ourania, Mountzios Giannis, Landi Lorenza, Cappuzzo Federico, Blackhall Fiona",
+                "journal": "Drugs"
+            }
+        ],
+        "sideEffects": [],
+        "drugInteractions": [],
+        "parameter": "oncologicalTreatments"
+    },
+    {
+        "publications": [
+            {
+                "title": "Cisplatin versus carboplatin-based regimens for the treatment of patients with metastatic lung cancer. An analysis of Veterans Health Administration data.",
+                "year": "2014",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/24662458",
+                "score": "0.8888888888888888",
+                "author": "Santana-Davila Rafael, Szabo Aniko, Arce-Lara Carlos, Williams Christina D, Kelley Michael J, Whittle Jeff",
+                "journal": "Journal of thoracic oncology : official publication of the International Association for the Study of Lung Cancer"
+            },
+            {
+                "title": "Circulating endothelial cells for evaluation of tumor response in non-small cell lung cancer patients receiving first-line chemotherapy.",
+                "year": "2015",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/26109363",
+                "score": "0.7777777777777778",
+                "author": "Najjar Fadi, Al-Massarani Ghassan, Banat Israa, Alammar Moosheer",
+                "journal": "The International journal of biological markers"
+            },
+            {
+                "title": "[Combinations of platinum salts and gemcitabine in the treatment of non-small-cell lung cancer].",
+                "year": "2002",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12449035",
+                "score": "0.7777777777777778",
+                "author": "Souquet Pierre-Jean, Gerini\u00e8re Laurence",
+                "journal": "Bulletin du cancer"
+            }
+        ],
+        "sideEffects": [],
+        "drugInteractions": [],
+        "parameter": "chemotherapyDrugs"
+    },
+    {
+        "publications": [
+            {
+                "title": "Treatment in EGFR-mutated non-small cell lung cancer: how to block the receptor and overcome resistance mechanisms.",
+                "year": "2017",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/28708233",
+                "score": "0.6666666666666666",
+                "author": "Proto Claudia, Lo Russo Giuseppe, Corrao Giulia, Ganzinelli Monica, Facchinetti Francesco, Minari Roberta, Tiseo Marcello, Garassino Marina Chiara",
+                "journal": "Tumori"
+            },
+            {
+                "title": "Epidermal Growth Factor Receptor Mutated Advanced Non-Small Cell Lung Cancer: A Changing Treatment Paradigm.",
+                "year": "2017",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/27912836",
+                "score": "0.6666666666666666",
+                "author": "Pakkala Suchita, Ramalingam Suresh S",
+                "journal": "Hematology/oncology clinics of North America"
+            },
+            {
+                "title": "RB loss in resistant EGFR mutant lung adenocarcinomas that transform to small-cell lung cancer.",
+                "year": "2015",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/25758528",
+                "score": "0.5",
+                "author": "Niederst Matthew J, Sequist Lecia V, Poirier John T, Mermel Craig H, Lockerman Elizabeth L, Garcia Angel R, Katayama Ryohei, Costa Carlotta, Ross Kenneth N, Moran Teresa, Howe Emily, Fulton Linnea E, Mulvey Hillary E, Bernardo Lindsay A, Mohamoud Farhiya, Miyoshi Norikatsu, VanderLaan Paul A, Costa Daniel B, J\u00e4nne Pasi A, Borger Darrell R, Ramaswamy Sridhar, Shioda Toshi, Iafrate Anthony J, Getz Gad, Rudin Charles M, Mino-Kenudson Mari, Engelman Jeffrey A",
+                "journal": "Nature communications"
+            },
+            {
+                "title": "Targeting the epidermal growth factor receptor in non-small cell lung cancer cells: the effect of combining RNA interference with tyrosine kinase inhibitors or cetuximab.",
+                "year": "2012",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/22436374",
+                "score": "0.5",
+                "author": "Chen Gang, Kronenberger Peter, Teugels Erik, Umelo Ijeoma Adaku, De Gr\u00e8ve Jacques",
+                "journal": "BMC medicine"
+            }
+        ],
+        "sideEffects": [],
+        "drugInteractions": [],
+        "parameter": "tkiDrugs"
+    },
+    {
+        "publications": [
+            {
+                "title": "Supportive care of the lung cancer patients.",
+                "year": "1990",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/1704881",
+                "score": "1.0",
+                "author": "Gradishar W J, Magid D, Bitran J D",
+                "journal": "Hematology/oncology clinics of North America"
+            },
+            {
+                "title": "End-of-life care for persons with advanced Alzheimer disease: design and baseline data from the ALFINE study.",
+                "year": "2012",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/22555791",
+                "score": "1.0",
+                "author": "Nourhash\u00e9mi F, Gillette S, Cantet C, Stilmunkes A, Saffon N, Roug\u00e9-Bugat M E, Vellas B, Rolland Y",
+                "journal": "The journal of nutrition, health & aging"
+            },
+            {
+                "title": "Can multidisciplinary guidelines improve the palliation of symptoms in the terminal phase of dementia?",
+                "year": "2002",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/12271257",
+                "score": "1.0",
+                "author": "Lloyd-Williams Mari, Payne Sheila",
+                "journal": "International journal of palliative nursing"
+            }
+        ],
+        "sideEffects": [],
+        "drugInteractions": [],
+        "parameter": "drugGroups"
+    },
+    {
+        "publications": [
+            {
+                "title": "Immune Checkpoint Blockade: A New Era for Non-Small Cell Lung Cancer.",
+                "year": "2016",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/27484062",
+                "score": "0.6666666666666666",
+                "author": "Califano Raffaele, Kerr Keith, Morgan Robert David, Lo Russo Giuseppe, Garassino Marina, Morgillo Floriana, Rossi Antonio",
+                "journal": "Current oncology reports"
+            },
+            {
+                "title": "Emerging immunotherapies in the treatment of non-small cell lung cancer (NSCLC): the role of immune checkpoint inhibitors.",
+                "year": "2015",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/24685885",
+                "score": "0.6666666666666666",
+                "author": "Langer Corey J",
+                "journal": "American journal of clinical oncology"
+            },
+            {
+                "title": "Response to anti-programmed cell death protein-1 antibodies in men treated for platinum refractory germ cell cancer relapsed after high-dose chemotherapy and stem cell transplantation.",
+                "year": "2017",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/28262583",
+                "score": "0.6666666666666666",
+                "author": "Zsch\u00e4bitz Stefanie, Lasitschka Felix, Hadaschik Boris, Hofheinz Ralf-Dieter, Jentsch-Ullrich Kathleen, Gr\u00fcner Marcus, J\u00e4ger Dirk, Gr\u00fcllich Carsten",
+                "journal": "European journal of cancer (Oxford, England : 1990)"
+            },
+            {
+                "title": "Differential Activity of Nivolumab, Pembrolizumab and MPDL3280A according to the Tumor Expression of Programmed Death-Ligand-1 (PD-L1): Sensitivity Analysis of Trials in Melanoma, Lung and Genitourinary Cancers.",
+                "year": "2015",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/26086854",
+                "score": "0.6666666666666666",
+                "author": "Carbognin Luisa, Pilotto Sara, Milella Michele, Vaccaro Vanja, Brunelli Matteo, Cali\u00f2 Anna, Cuppone Federica, Sperduti Isabella, Giannarelli Diana, Chilosi Marco, Bronte Vincenzo, Scarpa Aldo, Bria Emilio, Tortora Giampaolo",
+                "journal": "PloS one"
+            }
+        ],
+        "sideEffects": [],
+        "drugInteractions": [],
+        "parameter": "immunotherapyDrugs"
+    },
+    {
+        "publications": [],
+        "sideEffects": [],
+        "drugInteractions": [],
+        "parameter": "tumorType"
+    },
+    {
+        "publications": [
+            {
+                "title": "The importance of molecular profiling in predicting response to epidermal growth factor receptor family inhibitors in non-small-cell lung cancer: focus on clinical trial results.",
+                "year": "2013",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/23582282",
+                "score": "0.3333333333333333",
+                "author": "Tsao Anne S, Papadimitrakopoulou Vassiliki",
+                "journal": "Clinical lung cancer"
+            },
+            {
+                "title": "[Value of serum carcinoembryonic antigen in prediction of chemotherapy efficacy and prognosis in patients with advanced non-small cell lung cancer treated with EGFR-tyrosine kinase inhibitor].",
+                "year": "2011",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/21875484",
+                "score": "0.3333333333333333",
+                "author": "Xu Chong-an, Su He, Liu Jia-li, Li Lin, Zou Hua-wei",
+                "journal": "Zhonghua zhong liu za zhi [Chinese journal of oncology]"
+            },
+            {
+                "title": "[Molecular pathology of the lungs. New perspectives by next generation sequencing].",
+                "year": "2013",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/23389825",
+                "score": "0.3333333333333333",
+                "author": "Vollbrecht C, K\u00f6nig K, Heukamp L, B\u00fcttner R, Odenthal M",
+                "journal": "Der Pathologe"
+            },
+            {
+                "title": "Activity of ixabepilone in oestrogen receptor-negative and oestrogen receptor-progesterone receptor-human epidermal growth factor receptor 2-negative metastatic breast cancer.",
+                "year": "2009",
+                "url": "https://www.ncbi.nlm.nih.gov/pubmed/19683429",
+                "score": "0.3333333333333333",
+                "author": "Pivot Xavier B, Li Rubi K, Thomas Eva S, Chung Hyun-Cheol, Fein Luis E, Chan Valorie F, Jassem Jacek, de Mendoza Fernando Hurtado, Mukhopadyay Pralay, Roch\u00e9 Henri H",
+                "journal": "European journal of cancer (Oxford, England : 1990)"
+            }
+        ],
+        "sideEffects": [],
+        "drugInteractions": [],
+        "parameter": "biomarkers"
     }
 ]

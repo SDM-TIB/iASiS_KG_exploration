@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 #
-# Description: POST service for SemEP with drugs
+# Description: POST service for exploration of
+# data of Lung Cancer in the iASiS KG.
 #
 
 import sys
@@ -18,6 +19,8 @@ handler.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
 logger.addHandler(handler)
+
+LIMIT=3
 
 #KG="http://194.95.157.198:11230/sparql"
 KG = os.environ["IASISKG_ENDPOINT"]
@@ -67,6 +70,12 @@ SELECT DISTINCT  ?idf COUNT(?c) as ?C WHERE {
                             ?s <http://project-iasis.eu/vocab/pubmedID> ?idf.
 """
 
+############################
+#
+# Query generation
+#
+############################
+
 def query_publications_ranked(lcuis):
     query = QUERY_PUBLICATIONS_RANKED + get_publications_filter(lcuis, "a") + NEWLINE + CLOSE_RANK
     print("Query publications ranked:")
@@ -113,6 +122,12 @@ def execute_query(query):
     qresults = sendSPARQL(sparql_ins=sparql_ins, origin_query=query, num_paging=10000, len_max=10000)
     #print(qresults)
     return qresults
+
+############################
+#
+# Processing results
+#
+############################
 
 def get_publications_results(qresults):
     result = {}
@@ -232,7 +247,7 @@ def proccesing_publications_response(input_dicc):
     return pubs
 """
 
-def proceess_biomarkers(lelems):
+def processing_biomarkers(lelems):
     cuiList = []
     for e in lelems:
         if e.upper() == "EGFR":
@@ -242,10 +257,10 @@ def proceess_biomarkers(lelems):
         elif e.upper() == "ROS1":
             cuiList.append("C0812281")
         else:
-            cuiList.append(e)
+            cuiList.append(e.replace(" ", ""))
     return cuiList
 
-def process_oncologicalTreatments(lelems):
+def procesing_oncologicalTreatments(lelems):
     cuiList = []
     for e in lelems:
         if e.lower() == "immunotherapy":
@@ -261,7 +276,7 @@ def process_oncologicalTreatments(lelems):
         elif e.lower() == "surgery":
             cuiList.append("C0543467")
         else:
-            cuiList.append(e)
+            cuiList.append(e.replace(" ", ""))
     return cuiList
 
 def proccesing_response(input_dicc, limit, ltypes):
@@ -270,11 +285,11 @@ def proccesing_response(input_dicc, limit, ltypes):
     for elem in input_dicc:
         print("")
         if elem == 'biomarkers':
-            lcuis =  proceess_biomarkers(input_dicc[elem])
+            lcuis =  processing_biomarkers(input_dicc[elem])
         elif elem == 'oncologicalTreatments':
-            lcuis = process_oncologicalTreatments(input_dicc[elem])
+            lcuis = procesing_oncologicalTreatments(input_dicc[elem])
         else:
-            lcuis = input_dicc[elem]
+            lcuis = [ e.replace(" ", "") for e in input_dicc[elem] ]
         print("Processing: ", elem)
         print("CUIS ", lcuis)
         results_pub = get_publication_data(lcuis)
@@ -305,6 +320,7 @@ def proccesing_response(input_dicc, limit, ltypes):
             allpubs.append(codicc)
     return allpubs
 
+"""
 def proccesing_side_effects_response(input_list):
     se = []
     drugs = {}
@@ -336,6 +352,7 @@ def proccesing_side_effects_response(input_list):
     se.append(drugs)
     
     return se
+"""
 
 def proccesing_list_types(ltype):
     ltype = ltype.replace("[", "")
@@ -344,7 +361,7 @@ def proccesing_list_types(ltype):
     ltype = ltype.split(",")
     return ltype 
 
-@app.route('/iasiskgexploration', methods=['POST'])
+@app.route('/lc_exploration', methods=['POST'])
 def run_semep_drug_service():
     if (not request.json):
         abort(400)
@@ -352,10 +369,13 @@ def run_semep_drug_service():
     endpoint = KG
     print("Number of Arguments", len(request.args))
     print("Input type 1", request.args['type'])
-    print("Limit of responses", request.args['limit'])
+    if 'limit' in request.args:
+        limit = int(request.args['limit'])
+    else:
+        limit = LIMIT
+    print("Limit of responses", limit)
 
     typed = request.args['type']
-    limit = int(request.args['limit'])
     ltypes = proccesing_list_types(typed)
     print("List of types ", ltypes)
     
@@ -365,7 +385,7 @@ def run_semep_drug_service():
     print(input_list)
     print("Proccesing input done ")
     logger.info("Number of terms analyze: "+ str(len(input_list)))
-    logger.info("Hello, this is the IaSiS KG exploration Service")
+    logger.info("Hello, this is the IaSiS Lung Cancer Exploration Service")
     #result = get_drug_data(drug, endpoint)
     if len(input_list) == 0:
         logger.info("Error in the input format")

@@ -1,7 +1,7 @@
 FROM ubuntu:17.10
 
-WORKDIR /IasisKGExplorationService
-ADD . /IasisKGExplorationService
+WORKDIR /IasisLCExplorationService
+ADD . /IasisLCExplorationService
 
 RUN apt-get --assume-yes update
 RUN apt-get --assume-yes upgrade
@@ -11,8 +11,8 @@ RUN apt-get --assume-yes install python3 python3-numpy python3-flask python3-spa
 EXPOSE 5003
 
 # Define environment variable
-ENV NAME IasisKGExploration
+ENV NAME IasisLCExploration
 
 # Run app.py when the container launches
-CMD ./run_iasis_KG_exploration_service.sh
+CMD ./run_iasis_lc_exploration_service.sh
 
