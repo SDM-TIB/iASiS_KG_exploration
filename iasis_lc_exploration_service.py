@@ -24,7 +24,7 @@ LIMIT=3
 
 #KG="http://194.95.157.198:11230/sparql"
 KG = os.environ["IASISKG_ENDPOINT"]
-KG="http://node2.research.tib.eu:7171/sparql"
+#KG="http://10.114.113.14:7171/sparql"
 EMPTY_JSON = "{}"
 
 app = Flask(__name__)
