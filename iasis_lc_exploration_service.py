@@ -24,7 +24,7 @@ LIMIT=3
 
 #KG="http://194.95.157.198:11230/sparql"
 KG = os.environ["IASISKG_ENDPOINT"]
-#KG="http://node2.research.tib.eu:7171/sparql"
+KG="http://node2.research.tib.eu:7171/sparql"
 EMPTY_JSON = "{}"
 
 app = Flask(__name__)
@@ -412,7 +412,7 @@ def run_semep_drug_service():
                    
     logger.info("Sending the results: ")
     response = make_response(r, 200)
-    response.mimetype = "application/javascript"
+    response.mimetype = "application/json"
     return response
 
 def run_service():
@@ -422,7 +422,7 @@ def main(*args):
     if len(args) == 1:
         myhost = args[0]
     else:
-        myhost = "127.0.0.1"
+        myhost = "0.0.0.0"
     app.run(debug=True, host=myhost)
     
 if __name__ == '__main__':
