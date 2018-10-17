@@ -2,7 +2,7 @@ Build the image:
 docker build -t lc_exploration:latest .
 
 Run the service:
-docker run -p 5003:5003 lc_exploration:latest
+docker run -p 5003:5003  -e IASISKG_ENDPOINT='http://node2.research.tib.eu:7171/sparql'  lc_exploration:latest
 
 TAG the image:
 docker tag lc_exploration:latest gpalma/lc_exploration:latest
@@ -11,4 +11,4 @@ Push the image:
 docker push gpalma/lc_exploration:latest
 
 Pull and run the image:
-docker run -p 5003:5003 gpalma/lc_exploration:latest
+docker run -p 5003:5003 -e IASISKG_ENDPOINT='http://node2.research.tib.eu:7171/sparql' gpalma/lc_exploration:latest
