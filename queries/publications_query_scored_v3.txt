@@ -18,3 +18,21 @@ SELECT DISTINCT  ?idf COUNT(?c) as ?C WHERE {
                             ?s <http://project-iasis.eu/vocab/pubmedID> ?idf.
 FILTER(?a in (<http://project-iasis.eu/Annotation/C0004272>, <http://project-iasis.eu/Annotation/C0010178>, <http://project-iasis.eu/Annotation/C0013556>, <http://project-iasis.eu/Annotation/C0162416>))
 } GROUP BY ?idf ORDER BY DESC (?C)
+
+
+
+
+SELECT DISTINCT  ?idf COUNT(?c) as ?score SAMPLE(?title) as ?title SAMPLE(?author) as ?author SAMPLE(?journal) as ?journal SAMPLE(?year) as ?year  WHERE {
+                            ?s a <http://project-iasis.eu/vocab/Publication>.
+                            ?s <http://project-iasis.eu/vocab/title> ?title.
+                            ?s <http://project-iasis.eu/vocab/author> ?author.
+                            ?s <http://project-iasis.eu/vocab/journal> ?journal.
+                            ?s <http://project-iasis.eu/vocab/year> ?year.
+                            ?o <http://project-iasis.eu/vocab/annotates>  ?s.
+                            ?o <http://project-iasis.eu/vocab/hasAnnotation> ?a.
+                            ?o <http://project-iasis.eu/vocab/confidence>  ?c.
+                            ?o a <http://project-iasis.eu/vocab/HAS_TOPIC> .
+                            ?s <http://project-iasis.eu/vocab/pubmedID> ?idf.
+                            FILTER(?a in (<http://project-iasis.eu/Annotation/C0004272>,<http://project-iasis.eu/Annotation/C0010178>,<http://project-iasis.eu/Annotation/C0013556>,<http://project-iasis.eu/Annotation/C0162416>))        
+}GROUP BY ?idf
+ORDER BY DESC (?score)

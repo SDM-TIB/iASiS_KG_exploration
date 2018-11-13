@@ -1,8 +1,10 @@
 Build the image:
-docker build -t lc_exploration:latest .
+docker build -t asakor/iasis_kg_exp:1.0 .
 
 Run the service:
-docker run -p 5003:5003  -e IASISKG_ENDPOINT='http://node2.research.tib.eu:7171/sparql'  lc_exploration:latest
+docker run --name iasis_exp -d -p 5000:5000  -e IASISKG_ENDPOINT='http://10.114.113.14:7171/sparql'  asakor/iasis_kg_exp:1.0
+
+docker logs -f iasis_exp
 
 TAG the image:
 docker tag lc_exploration:latest gpalma/lc_exploration:latest
