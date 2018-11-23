@@ -1,0 +1,5 @@
+SELECT DISTINCT ?drug WHERE {  ?drug a <http://project-iasis.eu/vocab/Drug>.
+                            ?indication <http://project-iasis.eu/vocab/hasIndication>  ?drug.
+                             FILTER(?indication in (<http://project-iasis.eu/Disorder/C0030193>))    
+    
+}

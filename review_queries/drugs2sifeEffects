@@ -1,0 +1,6 @@
+SELECT DISTINCT ?sideEffect WHERE {  ?drug a <http://project-iasis.eu/vocab/Drug>.
+                            ?drug <http://project-iasis.eu/vocab/drug_isRelatedTo_dse>  ?drugSideEffect.
+                            ?sideEffect <http://project-iasis.eu/vocab/sideEffect_isRelatedTo_dse> ?drugSideEffect
+                             FILTER(?drug in (<http://project-iasis.eu/Drug/DB01204>))    
+    
+}

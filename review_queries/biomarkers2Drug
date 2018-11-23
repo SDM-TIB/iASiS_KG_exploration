@@ -1,0 +1,5 @@
+SELECT DISTINCT ?drug WHERE {  ?biomarker <http://project-iasis.eu/vocab/hasIndication> ?drug .
+                                    FILTER(?biomarker in (<http://project-iasis.eu/Biomarker/C1414313>))   
+                              
+    
+}
