@@ -21,7 +21,7 @@ logger.setLevel(logging.INFO)
 
 LIMIT=10
 
-KG="http://lxz15234:4141/sparql"
+KG="http://lxz15234:8181/sparql"
 #KG = os.environ["IASISKG_ENDPOINT"]
 #KG="http://10.114.113.14:7171/sparql"
 EMPTY_JSON = "{}"
@@ -64,6 +64,24 @@ SELECT DISTINCT  ?idf COUNT(?c) as ?score SAMPLE(?title) as ?title SAMPLE(?autho
                             ?s <http://project-iasis.eu/vocab/pubmedID> ?idf.
 """
 
+QUERY_DISORDERS_TO_DRUGS ="""
+SELECT DISTINCT ?drug WHERE {  ?drug a <http://project-iasis.eu/vocab/Drug>.
+                            ?indication <http://project-iasis.eu/vocab/hasIndication>  ?drug.                              
+"""
+
+
+QUERY_BIOMARKERS_TO_DRUGS ="""
+SELECT DISTINCT ?drug WHERE {  ?biomarker <http://project-iasis.eu/vocab/hasIndication> ?drug .
+                               ?biomarker a <http://project-iasis.eu/vocab/Biomarker>. 
+
+"""
+
+QUERY_DRUGS_TO_SIDEEFFECTS ="""
+SELECT DISTINCT ?sideEffect WHERE {  ?drug a <http://project-iasis.eu/vocab/Drug>.
+                            ?drug <http://project-iasis.eu/vocab/drug_isRelatedTo_dse>  ?drugSideEffect.
+                            ?sideEffect <http://project-iasis.eu/vocab/sideEffect_isRelatedTo_dse> ?drugSideEffect    
+
+"""
 ############################
 #
 # Query generation
@@ -72,21 +90,15 @@ SELECT DISTINCT  ?idf COUNT(?c) as ?score SAMPLE(?title) as ?title SAMPLE(?autho
 
 
 def execute_query(query):
-    #logger.info("Query:" + str(query))
-    #logger.info("EndPoint:" + str(KG))
     sparql_ins = SPARQLWrapper(KG)
     sparql_ins.setQuery(query)
-    #logger.info("Waiting for the SPARQL Endpoint")
     sparql_ins.setReturnFormat(JSON)
-    #print(qresults)
     return sparql_ins.query().convert()['results']['bindings']
 
 def build_query_with_cuis(cuis):
     query=QUERY_PUBLICATIONS_RANKED
-    #print(cuis)
     query+="FILTER(?a in ("
     for cui in cuis:
-        #print(cui)
         query+="<http://project-iasis.eu/Annotation/"+cui+">,"
     query=query[:-1]
     query+="))} GROUP BY ?idf ORDER BY DESC (?score) LIMIT "+str(LIMIT)
@@ -109,7 +121,6 @@ def get_publications_results(qresults):
         pub_dicc["year"] = cur_result["year"]["value"]
         pub_dicc["journal"] = cur_result["journal"]["value"]
         result[pub_id] = pub_dicc
-        #print((pub_title, pub_author, pub_year, pub_journal))
     return result 
 
 
@@ -127,33 +138,71 @@ def get_publications_ranked_result(qresults, n, limit):
     return results
 
 def get_publications_ranked_data(lcuis, limit):
-    #print("CUIS ", lcuis)
     query = build_query_with_cuis(lcuis)
     qresults = execute_query(query)
-    #logger.info("Number of publications ranked: " + str(len(qresults)))
-    #results = get_publications_ranked_result(qresults, len(lcuis), limit)
-    #print(results)
     return qresults
 
+def disorder2drugs_query(disorders):
+    query=QUERY_DISORDERS_TO_DRUGS
+    query+="FILTER(?indication in ("
+    for cui in disorders:
+        query+="<http://project-iasis.eu/Disorder/"+cui+">,"
+    query=query[:-1]
+    query+="))}"
+    qresults = execute_query(query)
+    qresults=[item['drug']['value'] for item in qresults]
+        
+    return qresults
+
+def biomarkers2drugs_query(biomarkers):
+    query=QUERY_BIOMARKERS_TO_DRUGS
+    query+="FILTER(?biomarker in ("
+    for cui in biomarkers:
+        query+="<http://project-iasis.eu/Biomarker/"+cui+">,"
+    query=query[:-1]
+    query+="))}"
+    qresults = execute_query(query)
+    qresults=[item['drug']['value'] for item in qresults]
+    return qresults
+
+def drug2sideEffect_query(drugs):
+    query=QUERY_DRUGS_TO_SIDEEFFECTS
+    query+="FILTER(?drug in ("
+    for drug in drugs:
+        query+="<"+drug+">,"
+    query=query[:-1]
+    query+="))} LIMIT "+str(LIMIT)
+    qresults = execute_query(query)
+    qresults=[item['sideEffect']['value'] for item in qresults]
+    return qresults
 
 def proccesing_response(input_dicc, limit, ltypes):
-    allpubs = []
+    finalResponse = []
     for elem in input_dicc:
         lcuis = input_dicc[elem]
         number_cuis=len(lcuis)
-        #results_pub = get_publication_data(lcuis)
-        results_pub_ranked = get_publications_ranked_data(lcuis, limit)
+        
         codicc = {}
         codicc['parameter'] = elem
 
         if ('sideEffects' in ltypes):
-            codicc['sideEffects'] = []
+            if elem=='comorbidities' or elem=='tumorType':
+                drugs=disorder2drugs_query(input_dicc[elem])
+            elif elem=='biomarkers':
+                drugs=biomarkers2drugs_query(input_dicc[elem])
+            elif elem in ['drugs','oncologicalTreatments','immunotherapyDrugs','tkiDrugs','chemotherapyDrugs']:
+                drugs=input_dicc[elem]
+            if len(drugs)!=0:
+                sideEffects=drug2sideEffect_query(drugs)
+                codicc['sideEffects'] = sideEffects
+                finalResponse.append(codicc)
         
         if ('drugInteractions' in ltypes):
             codicc['drugInteractions'] = []
 
         if ('publications' in ltypes):
             pubs = []
+            results_pub_ranked = get_publications_ranked_data(lcuis, limit)
             for result in results_pub_ranked:
                 pub1 = {}
                 pub1['title'] =  result["title"]["value"]
@@ -165,8 +214,8 @@ def proccesing_response(input_dicc, limit, ltypes):
                 pubs.append(pub1)
                 
             codicc['publications'] = pubs
-            allpubs.append(codicc)
-    return allpubs
+            finalResponse.append(codicc)
+    return finalResponse
 
 
 
@@ -202,9 +251,6 @@ def run_exploration_api():
     response = make_response(r, 200)
     response.mimetype = "application/json"
     return response
-
-#def run_service():
-    #app.run(debug=True)
 
 def main(*args):
     if len(args) == 1:
