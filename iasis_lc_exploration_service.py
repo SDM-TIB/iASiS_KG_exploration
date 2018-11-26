@@ -21,8 +21,8 @@ logger.setLevel(logging.INFO)
 
 LIMIT=10
 
-KG="http://lxz15234:8181/sparql"
-#KG = os.environ["IASISKG_ENDPOINT"]
+#KG="http://lxz15234:8181/sparql"
+KG = os.environ["IASISKG_ENDPOINT"]
 #KG="http://10.114.113.14:7171/sparql"
 EMPTY_JSON = "{}"
 
