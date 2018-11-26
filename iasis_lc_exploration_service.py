@@ -65,22 +65,25 @@ SELECT DISTINCT  ?idf COUNT(?c) as ?score SAMPLE(?title) as ?title SAMPLE(?autho
 """
 
 QUERY_DISORDERS_TO_DRUGS ="""
-SELECT DISTINCT ?drug WHERE {  ?drug a <http://project-iasis.eu/vocab/Drug>.
-                            ?indication <http://project-iasis.eu/vocab/hasIndication>  ?drug.                              
+SELECT DISTINCT ?drug ?drugLabel WHERE {  ?drug a <http://project-iasis.eu/vocab/Drug>.
+                            ?indication <http://project-iasis.eu/vocab/hasIndication>  ?drug.     
+                            ?drug <http://project-iasis.eu/vocab/drugLabel> ?drugLabel.
 """
 
 
 QUERY_BIOMARKERS_TO_DRUGS ="""
-SELECT DISTINCT ?drug WHERE {  ?biomarker <http://project-iasis.eu/vocab/hasIndication> ?drug .
+SELECT DISTINCT ?drug ?drugLabel WHERE {  ?biomarker <http://project-iasis.eu/vocab/hasIndication> ?drug .
                                ?biomarker a <http://project-iasis.eu/vocab/Biomarker>. 
+                               ?drug <http://project-iasis.eu/vocab/drugLabel> ?drugLabel.
 
 """
 
 QUERY_DRUGS_TO_SIDEEFFECTS ="""
-SELECT DISTINCT ?sideEffect WHERE {  ?drug a <http://project-iasis.eu/vocab/Drug>.
+SELECT DISTINCT ?drugLabel ?sideEffectLabel WHERE {  ?drug a <http://project-iasis.eu/vocab/Drug>.
+                                           ?drug <http://project-iasis.eu/vocab/drugLabel> ?drugLabel.
                             ?drug <http://project-iasis.eu/vocab/drug_isRelatedTo_dse>  ?drugSideEffect.
-                            ?sideEffect <http://project-iasis.eu/vocab/sideEffect_isRelatedTo_dse> ?drugSideEffect    
-
+                            ?sideEffect <http://project-iasis.eu/vocab/sideEffect_isRelatedTo_dse> ?drugSideEffect.
+                            ?sideEffect <http://project-iasis.eu/vocab/sideEffectLabel> ?sideEffectLabel.
 """
 ############################
 #
@@ -150,7 +153,7 @@ def disorder2drugs_query(disorders):
     query=query[:-1]
     query+="))}"
     qresults = execute_query(query)
-    qresults=[item['drug']['value'] for item in qresults]
+    qresults=[(item['drug']['value'],item['drugLabel']['value']) for item in qresults]
         
     return qresults
 
@@ -162,7 +165,7 @@ def biomarkers2drugs_query(biomarkers):
     query=query[:-1]
     query+="))}"
     qresults = execute_query(query)
-    qresults=[item['drug']['value'] for item in qresults]
+    qresults=[(item['drug']['value'],item['drugLabel']['value']) for item in qresults]
     return qresults
 
 def drug2sideEffect_query(drugs):
@@ -173,7 +176,7 @@ def drug2sideEffect_query(drugs):
     query=query[:-1]
     query+="))} LIMIT "+str(LIMIT)
     qresults = execute_query(query)
-    qresults=[item['sideEffect']['value'] for item in qresults]
+    qresults=[(item['drugLabel']['value'],item['sideEffectLabel']['value']) for item in qresults]
     return qresults
 
 def proccesing_response(input_dicc, limit, ltypes):
@@ -193,12 +196,22 @@ def proccesing_response(input_dicc, limit, ltypes):
             elif elem in ['drugs','oncologicalTreatments','immunotherapyDrugs','tkiDrugs','chemotherapyDrugs']:
                 drugs=input_dicc[elem]
             if len(drugs)!=0:
-                sideEffects=drug2sideEffect_query(drugs)
+                drug_sideEffects=drug2sideEffect_query([drug[0] for drug in drugs])
+                sideEffects=[]
+                for item in drug_sideEffects:
+                    temp_dic=dict()
+                    temp_dic['drug']=item[0]
+                    temp_dic['sideEffect']=item[1]
+                    sideEffects.append(temp_dic)
                 codicc['sideEffects'] = sideEffects
-                finalResponse.append(codicc)
         
-        if ('drugInteractions' in ltypes):
-            codicc['drugInteractions'] = []
+        if ('drugs' in ltypes):
+            if elem=='comorbidities' or elem=='tumorType':
+                drugs=disorder2drugs_query(input_dicc[elem])[:LIMIT]
+            elif elem=='biomarkers':
+                drugs=biomarkers2drugs_query(input_dicc[elem])[:LIMIT]
+            if len(drugs)!=0:
+                codicc['drugs'] = [drug[1] for drug in drugs]
 
         if ('publications' in ltypes):
             pubs = []
@@ -214,7 +227,8 @@ def proccesing_response(input_dicc, limit, ltypes):
                 pubs.append(pub1)
                 
             codicc['publications'] = pubs
-            finalResponse.append(codicc)
+            
+        finalResponse.append(codicc)
     return finalResponse
 
 
