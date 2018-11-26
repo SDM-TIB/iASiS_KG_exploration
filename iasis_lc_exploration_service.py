@@ -21,7 +21,7 @@ logger.setLevel(logging.INFO)
 
 LIMIT=10
 
-#KG="http://lxz15234:8181/sparql"
+#KG="http://node2.research.tib.eu:19191/sparql"
 KG = os.environ["IASISKG_ENDPOINT"]
 #KG="http://10.114.113.14:7171/sparql"
 EMPTY_JSON = "{}"
@@ -84,6 +84,25 @@ SELECT DISTINCT ?drugLabel ?sideEffectLabel WHERE {  ?drug a <http://project-ias
                             ?drug <http://project-iasis.eu/vocab/drug_isRelatedTo_dse>  ?drugSideEffect.
                             ?sideEffect <http://project-iasis.eu/vocab/sideEffect_isRelatedTo_dse> ?drugSideEffect.
                             ?sideEffect <http://project-iasis.eu/vocab/sideEffectLabel> ?sideEffectLabel.
+"""
+
+QUERY_DRUGS_TO_DRUGS_INTERACTIONS ="""
+SELECT DISTINCT ?effectorDrugLabel ?affectdDrugLabel ?effectLabel ?impactLabel WHERE {  
+                                           ?interaction <http://project-iasis.eu/vocab/affects> ?effectorDrug.
+                                           ?interaction <http://project-iasis.eu/vocab/isAffected> ?affectdDrug.
+                                           ?effectorDrug <http://project-iasis.eu/vocab/drugLabel> ?effectorDrugLabel.
+                                           ?affectdDrug <http://project-iasis.eu/vocab/drugLabel> ?affectdDrugLabel.
+                                           ?interaction <http://project-iasis.eu/vocab/hasEffect> ?effect.
+                                           ?effect <http://project-iasis.eu/vocab/effectLabel> ?effectLabel.
+                                           ?interaction <http://project-iasis.eu/vocab/hasImpact> ?impact.
+                                           ?impact <http://project-iasis.eu/vocab/impactLabel> ?impactLabel.
+"""
+
+QUERY_CUI_TO_DRUGS = """
+SELECT DISTINCT ?drug ?drugBankID WHERE {
+               ?drugCUI <http://project-iasis.eu/vocab/drugCuiID> ?cui.
+               ?drugCUI <http://www.w3.org/2002/07/owl#sameAs> ?drug.
+               ?drug <http://project-iasis.eu/vocab/drugBankID> ?drugBankID
 """
 ############################
 #
@@ -179,6 +198,28 @@ def drug2sideEffect_query(drugs):
     qresults=[(item['drugLabel']['value'],item['sideEffectLabel']['value']) for item in qresults]
     return qresults
 
+def drug2_interactions_query(drugs):
+    query=QUERY_DRUGS_TO_DRUGS_INTERACTIONS
+    query+="FILTER(?affectdDrug in ("
+    for drug in drugs:
+        query+="<"+drug+">,"
+    query=query[:-1]
+    query+="))} LIMIT "+str(LIMIT)
+    qresults = execute_query(query)
+    qresults=[(item['effectorDrugLabel']['value'],item['affectdDrugLabel']['value'],item['effectLabel']['value'],item['impactLabel']['value']) for item in qresults]
+    return qresults
+
+def drugsCUI2drugID_query(drugs):
+    query=QUERY_CUI_TO_DRUGS
+    query+="FILTER(?drugCUI in ("
+    for drug in drugs:
+        query+="<http://project-iasis.eu/Drug/"+drug+">,"
+    query=query[:-1]
+    query+="))} LIMIT "+str(LIMIT)
+    qresults = execute_query(query)
+    qresults=[("http://project-iasis.eu/Drug/"+item['drugBankID']['value'],item['drug']['value']) for item in qresults]
+    return qresults
+
 def proccesing_response(input_dicc, limit, ltypes):
     finalResponse = []
     for elem in input_dicc:
@@ -187,14 +228,14 @@ def proccesing_response(input_dicc, limit, ltypes):
         
         codicc = {}
         codicc['parameter'] = elem
-
+        #################################################################################3
         if ('sideEffects' in ltypes):
             if elem=='comorbidities' or elem=='tumorType':
                 drugs=disorder2drugs_query(input_dicc[elem])
             elif elem=='biomarkers':
                 drugs=biomarkers2drugs_query(input_dicc[elem])
             elif elem in ['drugs','oncologicalTreatments','immunotherapyDrugs','tkiDrugs','chemotherapyDrugs']:
-                drugs=input_dicc[elem]
+                drugs=drugsCUI2drugID_query(input_dicc[elem])
             if len(drugs)!=0:
                 drug_sideEffects=drug2sideEffect_query([drug[0] for drug in drugs])
                 sideEffects=[]
@@ -204,7 +245,7 @@ def proccesing_response(input_dicc, limit, ltypes):
                     temp_dic['sideEffect']=item[1]
                     sideEffects.append(temp_dic)
                 codicc['sideEffects'] = sideEffects
-        
+        ################################################################################
         if ('drugs' in ltypes):
             if elem=='comorbidities' or elem=='tumorType':
                 drugs=disorder2drugs_query(input_dicc[elem])[:LIMIT]
@@ -212,7 +253,26 @@ def proccesing_response(input_dicc, limit, ltypes):
                 drugs=biomarkers2drugs_query(input_dicc[elem])[:LIMIT]
             if len(drugs)!=0:
                 codicc['drugs'] = [drug[1] for drug in drugs]
-
+       #####################################################################################         
+        if ('drugInteractions' in ltypes):
+            if elem=='comorbidities' or elem=='tumorType':
+                drugs=disorder2drugs_query(input_dicc[elem])
+            elif elem=='biomarkers':
+                drugs=biomarkers2drugs_query(input_dicc[elem])
+            elif elem in ['drugs','oncologicalTreatments','immunotherapyDrugs','tkiDrugs','chemotherapyDrugs']:
+                drugs=drugsCUI2drugID_query(input_dicc[elem])
+            if len(drugs)!=0:
+                drug_interactions=drug2_interactions_query([drug[0] for drug in drugs])
+                drugInteractions=[]
+                for item in drug_interactions:
+                    temp_dic=dict()
+                    temp_dic['effectorDrug']=item[0]
+                    temp_dic['affectdDrug']=item[1]
+                    temp_dic['effect']=item[2]
+                    temp_dic['impact']=item[3]
+                    drugInteractions.append(temp_dic)
+                codicc['drugInteractions'] = drugInteractions
+        ######################################################################################
         if ('publications' in ltypes):
             pubs = []
             results_pub_ranked = get_publications_ranked_data(lcuis, limit)
@@ -227,7 +287,7 @@ def proccesing_response(input_dicc, limit, ltypes):
                 pubs.append(pub1)
                 
             codicc['publications'] = pubs
-            
+        ######################################################################################    
         finalResponse.append(codicc)
     return finalResponse
 
