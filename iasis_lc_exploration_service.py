@@ -21,7 +21,7 @@ logger.setLevel(logging.INFO)
 
 LIMIT=10
 
-#KG="http://node2.research.tib.eu:19191/sparql"
+#KG="http://localhost:11384/sparql"
 KG = os.environ["IASISKG_ENDPOINT"]
 #KG="http://10.114.113.14:7171/sparql"
 EMPTY_JSON = "{}"
@@ -66,14 +66,16 @@ SELECT DISTINCT  ?idf COUNT(?c) as ?score SAMPLE(?title) as ?title SAMPLE(?autho
 
 QUERY_DISORDERS_TO_DRUGS ="""
 SELECT DISTINCT ?drug ?drugLabel WHERE {  ?drug a <http://project-iasis.eu/vocab/Drug>.
-                            ?indication <http://project-iasis.eu/vocab/hasIndication>  ?drug.     
+                            ?indication_ID <http://project-iasis.eu/vocab/disorder_has_indication>  ?drug.     
+                            ?indication_ID <http://project-iasis.eu/vocab/hasCUIAnnotation>  ?indication.    
                             ?drug <http://project-iasis.eu/vocab/drugLabel> ?drugLabel.
 """
 
 
 QUERY_BIOMARKERS_TO_DRUGS ="""
-SELECT DISTINCT ?drug ?drugLabel WHERE {  ?biomarker <http://project-iasis.eu/vocab/hasIndication> ?drug .
-                               ?biomarker a <http://project-iasis.eu/vocab/Biomarker>. 
+SELECT DISTINCT ?drug ?drugLabel WHERE {  ?biomarker_ID <http://project-iasis.eu/vocab/biomarker_has_indication> ?drug .
+                               ?biomarker_ID a <http://project-iasis.eu/vocab/Biomarker>. 
+                               ?biomarker_ID <http://project-iasis.eu/vocab/hasCUIAnnotation> ?biomarker. 
                                ?drug <http://project-iasis.eu/vocab/drugLabel> ?drugLabel.
 
 """
@@ -83,7 +85,7 @@ SELECT DISTINCT ?drugLabel ?sideEffectLabel WHERE {  ?drug a <http://project-ias
                                            ?drug <http://project-iasis.eu/vocab/drugLabel> ?drugLabel.
                             ?drug <http://project-iasis.eu/vocab/drug_isRelatedTo_dse>  ?drugSideEffect.
                             ?sideEffect <http://project-iasis.eu/vocab/sideEffect_isRelatedTo_dse> ?drugSideEffect.
-                            ?sideEffect <http://project-iasis.eu/vocab/sideEffectLabel> ?sideEffectLabel.
+                            ?sideEffect <http://project-iasis.eu/vocab/phenotypeLabel> ?sideEffectLabel.
 """
 
 QUERY_DRUGS_TO_DRUGS_INTERACTIONS ="""
@@ -100,8 +102,7 @@ SELECT DISTINCT ?effectorDrugLabel ?affectdDrugLabel ?effectLabel ?impactLabel W
 
 QUERY_CUI_TO_DRUGS = """
 SELECT DISTINCT ?drug ?drugBankID WHERE {
-               ?drugCUI <http://project-iasis.eu/vocab/drugCuiID> ?cui.
-               ?drugCUI <http://www.w3.org/2002/07/owl#sameAs> ?drug.
+               ?drug <http://project-iasis.eu/vocab/hasCUIAnnotation> ?drugCUI.
                ?drug <http://project-iasis.eu/vocab/drugBankID> ?drugBankID
 """
 ############################
@@ -168,7 +169,7 @@ def disorder2drugs_query(disorders):
     query=QUERY_DISORDERS_TO_DRUGS
     query+="FILTER(?indication in ("
     for cui in disorders:
-        query+="<http://project-iasis.eu/Disorder/"+cui+">,"
+        query+="<http://project-iasis.eu/Annotation/"+cui+">,"
     query=query[:-1]
     query+="))}"
     qresults = execute_query(query)
@@ -180,7 +181,7 @@ def biomarkers2drugs_query(biomarkers):
     query=QUERY_BIOMARKERS_TO_DRUGS
     query+="FILTER(?biomarker in ("
     for cui in biomarkers:
-        query+="<http://project-iasis.eu/Biomarker/"+cui+">,"
+        query+="<http://project-iasis.eu/Annotation/"+cui+">,"
     query=query[:-1]
     query+="))}"
     qresults = execute_query(query)
@@ -213,7 +214,7 @@ def drugsCUI2drugID_query(drugs):
     query=QUERY_CUI_TO_DRUGS
     query+="FILTER(?drugCUI in ("
     for drug in drugs:
-        query+="<http://project-iasis.eu/Drug/"+drug+">,"
+        query+="<http://project-iasis.eu/Annotation/"+drug+">,"
     query=query[:-1]
     query+="))} LIMIT "+str(LIMIT)
     qresults = execute_query(query)
