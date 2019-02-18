@@ -22,8 +22,8 @@ logger.setLevel(logging.INFO)
 LIMIT=10
 
 #KG="http://localhost:11384/sparql"
-KG = os.environ["IASISKG_ENDPOINT"]
-#KG="http://10.114.113.14:7171/sparql"
+#KG = os.environ["IASISKG_ENDPOINT"]
+KG="http://10.114.113.14:11384/sparql"
 EMPTY_JSON = "{}"
 
 app = Flask(__name__)
@@ -171,7 +171,7 @@ def disorder2drugs_query(disorders):
     for cui in disorders:
         query+="<http://project-iasis.eu/Annotation/"+cui+">,"
     query=query[:-1]
-    query+="))}"
+    query+="))} LIMIT "+str(LIMIT)
     qresults = execute_query(query)
     qresults=[(item['drug']['value'],item['drugLabel']['value']) for item in qresults]
         
@@ -183,7 +183,7 @@ def biomarkers2drugs_query(biomarkers):
     for cui in biomarkers:
         query+="<http://project-iasis.eu/Annotation/"+cui+">,"
     query=query[:-1]
-    query+="))}"
+    query+="))} LIMIT "+str(LIMIT)
     qresults = execute_query(query)
     qresults=[(item['drug']['value'],item['drugLabel']['value']) for item in qresults]
     return qresults
