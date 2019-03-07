@@ -23,7 +23,7 @@ LIMIT=10
 
 #KG="http://localhost:11384/sparql"
 #KG = os.environ["IASISKG_ENDPOINT"]
-KG="http://10.114.113.14:11384/sparql"
+KG="http://10.114.113.14:11484/sparql"
 EMPTY_JSON = "{}"
 
 app = Flask(__name__)
@@ -226,9 +226,14 @@ def proccesing_response(input_dicc, limit, ltypes):
     for elem in input_dicc:
         lcuis = input_dicc[elem]
         number_cuis=len(lcuis)
-        
         codicc = {}
         codicc['parameter'] = elem
+        if number_cuis==0:
+            finalResponse.append(codicc)
+            continue
+            
+        
+        
         #################################################################################3
         if ('sideEffects' in ltypes):
             if elem=='comorbidities' or elem=='tumorType':
