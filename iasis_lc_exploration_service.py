@@ -70,7 +70,12 @@ SELECT DISTINCT ?drug ?drugLabel WHERE {  ?drug a <http://project-iasis.eu/vocab
                             ?indication_ID <http://project-iasis.eu/vocab/hasCUIAnnotation>  ?indication.    
                             ?drug <http://project-iasis.eu/vocab/drugLabel> ?drugLabel.
 """
-
+QUERY_DISORDERS_TO_LCDRUGS ="""
+SELECT DISTINCT ?drug ?drugLabel WHERE {  ?drug a <http://project-iasis.eu/vocab/LungCancerDrug>.
+                            ?indication_ID <http://project-iasis.eu/vocab/disorder_has_indication>  ?drug.     
+                            ?indication_ID <http://project-iasis.eu/vocab/hasCUIAnnotation>  ?indication.    
+                            ?drug <http://project-iasis.eu/vocab/drugLabel> ?drugLabel.
+"""
 
 QUERY_BIOMARKERS_TO_DRUGS ="""
 SELECT DISTINCT ?drug ?drugLabel WHERE {  ?biomarker_ID <http://project-iasis.eu/vocab/biomarker_has_indication> ?drug .
@@ -102,8 +107,29 @@ SELECT DISTINCT ?effectorDrugLabel ?affectdDrugLabel ?effectLabel ?impactLabel W
                                            ?impact <http://project-iasis.eu/vocab/impactLabel> ?impactLabel.
 """
 
+QUERY_DRUGS_TO_DRUGS_INTERACTIONS_LC ="""
+SELECT DISTINCT ?effectorDrugLabel ?affectdDrugLabel ?effectLabel ?impactLabel WHERE {  
+                                           ?interaction <http://project-iasis.eu/vocab/affects> ?effectorDrug.
+                                           ?interaction <http://project-iasis.eu/vocab/isAffected> ?affectdDrug.
+                                           ?effectorDrug a <http://project-iasis.eu/vocab/LungCancerDrug>.
+                                           ?affectdDrug a <http://project-iasis.eu/vocab/LungCancerDrug>.
+                                           ?effectorDrug <http://project-iasis.eu/vocab/drugLabel> ?effectorDrugLabel.
+                                           ?affectdDrug <http://project-iasis.eu/vocab/drugLabel> ?affectdDrugLabel.
+                                           ?interaction <http://project-iasis.eu/vocab/hasEffect> ?effect.
+                                           ?effect <http://project-iasis.eu/vocab/effectLabel> ?effectLabel.
+                                           ?interaction <http://project-iasis.eu/vocab/hasImpact> ?impact.
+                                           ?impact <http://project-iasis.eu/vocab/impactLabel> ?impactLabel.
+"""
+
 QUERY_CUI_TO_DRUGS = """
 SELECT DISTINCT ?drug ?drugBankID WHERE {
+               ?drug <http://project-iasis.eu/vocab/hasCUIAnnotation> ?drugCUI.
+               ?drug <http://project-iasis.eu/vocab/drugBankID> ?drugBankID
+"""
+
+QUERY_CUI_TO_LCDRUGS = """
+SELECT DISTINCT ?drug ?drugBankID WHERE {
+                ?drug a <http://project-iasis.eu/vocab/LungCancerDrug>.
                ?drug <http://project-iasis.eu/vocab/hasCUIAnnotation> ?drugCUI.
                ?drug <http://project-iasis.eu/vocab/drugBankID> ?drugBankID
 """
@@ -167,8 +193,11 @@ def get_publications_ranked_data(lcuis, limit):
     qresults = execute_query(query)
     return qresults
 
-def disorder2drugs_query(disorders):
-    query=QUERY_DISORDERS_TO_DRUGS
+def disorder2drugs_query(disorders,drugType='all'):
+    if drugType=='all':
+        query=QUERY_DISORDERS_TO_DRUGS
+    elif drugType=='only_LC_drugs' :
+        query=QUERY_DISORDERS_TO_LCDRUGS
     query+="FILTER(?indication in ("
     for cui in disorders:
         query+="<http://project-iasis.eu/Annotation/"+cui+">,"
@@ -201,8 +230,11 @@ def drug2sideEffect_query(drugs):
     qresults=[(item['drugLabel']['value'],item['sideEffectLabel']['value']) for item in qresults]
     return qresults
 
-def drug2_interactions_query(drugs):
-    query=QUERY_DRUGS_TO_DRUGS_INTERACTIONS
+def drug2_interactions_query(drugs,drugType='all'):
+    if drugType=='all':
+        query=QUERY_DRUGS_TO_DRUGS_INTERACTIONS
+    elif drugType=='only_LC_drugs' :
+        query=QUERY_DRUGS_TO_DRUGS_INTERACTIONS_LC
     query+="FILTER(?affectdDrug in ("
     for drug in drugs:
         query+="<"+drug+">,"
@@ -212,8 +244,11 @@ def drug2_interactions_query(drugs):
     qresults=[(item['effectorDrugLabel']['value'],item['affectdDrugLabel']['value'],item['effectLabel']['value'],item['impactLabel']['value']) for item in qresults]
     return qresults
 
-def drugsCUI2drugID_query(drugs):
-    query=QUERY_CUI_TO_DRUGS
+def drugsCUI2drugID_query(drugs,drugType='all'):
+    if drugType=='all':
+        query=QUERY_CUI_TO_DRUGS
+    elif drugType=='only_LC_drugs' :
+        query=QUERY_CUI_TO_LCDRUGS
     query+="FILTER(?drugCUI in ("
     for drug in drugs:
         query+="<http://project-iasis.eu/Annotation/"+drug+">,"
@@ -268,9 +303,9 @@ def proccesing_response(input_dicc, limit, ltypes):
             elif elem=='biomarkers':
                 drugs=biomarkers2drugs_query(input_dicc[elem])
             elif elem in ['drugs','oncologicalTreatments','immunotherapyDrugs','tkiDrugs','chemotherapyDrugs']:
-                drugs=drugsCUI2drugID_query(input_dicc[elem])
+                drugs=drugsCUI2drugID_query(input_dicc[elem],'only_LC_drugs')
             if len(drugs)!=0:
-                drug_interactions=drug2_interactions_query([drug[0] for drug in drugs])
+                drug_interactions=drug2_interactions_query([drug[0] for drug in drugs],'only_LC_drugs')
                 drugInteractions=[]
                 for item in drug_interactions:
                     temp_dic=dict()
