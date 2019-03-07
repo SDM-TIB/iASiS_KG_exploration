@@ -22,8 +22,8 @@ logger.setLevel(logging.INFO)
 LIMIT=10
 
 #KG="http://localhost:11384/sparql"
-#KG = os.environ["IASISKG_ENDPOINT"]
-KG="http://10.114.113.14:11484/sparql"
+KG = os.environ["IASISKG_ENDPOINT"]
+#KG="http://10.114.113.14:11484/sparql"
 EMPTY_JSON = "{}"
 
 app = Flask(__name__)
