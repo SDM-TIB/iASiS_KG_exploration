@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27897b1b-237e-4494-8b34-c1aa5f08a4af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/iasis_lc_exploration_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/iasis_lc_exploration_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DockerCommds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DockerCommds.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

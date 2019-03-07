@@ -1,16 +1,16 @@
 Build the image:
 docker build -t asakor/iasis_kg_exp:latest .
 
-Run the service:
-docker run --name iasis_exp -d -p 5009:5000  -e IASISKG_ENDPOINT='http://10.114.113.14:11384/sparql'  asakor/iasis_kg_exp:latest
 
 docker logs -f iasis_exp
 
 TAG the image:
-docker tag lc_exploration:latest gpalma/lc_exploration:latest
+docker tag asakor/iasis_kg_exp:latest iasistest.atc.gr:444/iasis_kg_exp:latest
 
 Push the image:
-docker push gpalma/lc_exploration:latest
+docker push asakor/iasis_kg_exp:latest
+docker push iasistest.atc.gr:444/iasis_kg_exp:latest
+
 
 Pull and run the image:
-docker run -p 5003:5003 -e IASISKG_ENDPOINT='http://node2.research.tib.eu:7171/sparql' gpalma/lc_exploration:latest
+docker run -d --name iasis_exp_api -p 5009:5000 -e IASISKG_ENDPOINT='http://10.114.113.14:11484/sparql' iasistest.atc.gr:444/iasis_kg_exp:latest
