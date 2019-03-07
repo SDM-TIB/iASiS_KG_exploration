@@ -84,8 +84,10 @@ QUERY_DRUGS_TO_SIDEEFFECTS ="""
 SELECT DISTINCT ?drugLabel ?sideEffectLabel WHERE {  ?drug a <http://project-iasis.eu/vocab/Drug>.
                                            ?drug <http://project-iasis.eu/vocab/drugLabel> ?drugLabel.
                             ?drug <http://project-iasis.eu/vocab/drug_isRelatedTo_dse>  ?drugSideEffect.
+                            ?drugSideEffect <http://project-iasis.eu/vocab/dse_AvgFrequency> ?freq.
                             ?sideEffect <http://project-iasis.eu/vocab/sideEffect_isRelatedTo_dse> ?drugSideEffect.
                             ?sideEffect <http://project-iasis.eu/vocab/phenotypeLabel> ?sideEffectLabel.
+                            FILTER (?freq >= 0.1 )
 """
 
 QUERY_DRUGS_TO_DRUGS_INTERACTIONS ="""
@@ -194,7 +196,7 @@ def drug2sideEffect_query(drugs):
     for drug in drugs:
         query+="<"+drug+">,"
     query=query[:-1]
-    query+="))} LIMIT "+str(LIMIT)
+    query+="))} ORDER BY DESC(?freq) LIMIT "+str(LIMIT)
     qresults = execute_query(query)
     qresults=[(item['drugLabel']['value'],item['sideEffectLabel']['value']) for item in qresults]
     return qresults
