@@ -5,7 +5,7 @@ ADD . /IasisLCExplorationService
 
 RUN apt-get --assume-yes update
 RUN apt-get --assume-yes upgrade
-RUN apt-get --assume-yes install python3 python3-numpy python3-flask python3-sparqlwrapper gunicorn3
+RUN apt-get --assume-yes install python3 python3-flask python3-sparqlwrapper
 
 # Make port 5003 available to the world outside this container
 EXPOSE 5000
