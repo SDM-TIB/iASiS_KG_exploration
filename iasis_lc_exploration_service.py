@@ -66,15 +66,20 @@ SELECT DISTINCT  ?idf COUNT(?c) as ?score SAMPLE(?title) as ?title SAMPLE(?autho
 
 QUERY_DISORDERS_TO_DRUGS ="""
 SELECT DISTINCT ?drug ?drugLabel WHERE {  ?drug a <http://project-iasis.eu/vocab/Drug>.
-                            ?indication_ID <http://project-iasis.eu/vocab/disorder_has_indication>  ?drug.     
-                            ?indication_ID <http://project-iasis.eu/vocab/hasCUIAnnotation>  ?indication.    
-                            ?drug <http://project-iasis.eu/vocab/drugLabel> ?drugLabel.
+?interaction <http://project-iasis.eu/vocab/interactor1> ?drug.
+?interaction <http://project-iasis.eu/vocab/interactor2>  ?indication_ID.
+?indication_ID <http://project-iasis.eu/vocab/hasCUIAnnotation>  ?indication.
+?drug <http://project-iasis.eu/vocab/drugLabel> ?drugLabel.
+
 """
 QUERY_DISORDERS_TO_LCDRUGS ="""
 SELECT DISTINCT ?drug ?drugLabel WHERE {  ?drug a <http://project-iasis.eu/vocab/LungCancerDrug>.
-                            ?indication_ID <http://project-iasis.eu/vocab/disorder_has_indication>  ?drug.     
-                            ?indication_ID <http://project-iasis.eu/vocab/hasCUIAnnotation>  ?indication.    
-                            ?drug <http://project-iasis.eu/vocab/drugLabel> ?drugLabel.
+?interaction <http://project-iasis.eu/vocab/interactor1> ?drug.
+?interaction <http://project-iasis.eu/vocab/interactor2>  ?indication_ID.
+?indication_ID <http://project-iasis.eu/vocab/hasCUIAnnotation>  ?indication.
+?drug <http://project-iasis.eu/vocab/drugLabel> ?drugLabel.
+
+
 """
 
 QUERY_BIOMARKERS_TO_DRUGS ="""
